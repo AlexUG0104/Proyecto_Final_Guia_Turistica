@@ -11,13 +11,26 @@
   <app-header></app-header>
 
   <main class="app-container">
-    <a class="volver" href="/">← Volver al mapa principal</a>
+    <a class="volver" id="volverProvincia" href="../index.html">
+      ← Volver a la provincia
+    </a>
 
     <destino-detalle></destino-detalle>
   </main>
 
   <script type="module" src="../components/app-header.js"></script>
   <script type="module" src="../components/destino-detalle.js"></script>
+
+  <!-- 🔥 ESTE SCRIPT VA AQUÍ -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const region = params.get("region");
+
+    if (region) {
+      document.getElementById("volverProvincia").href =
+        `../provincia/?region=${encodeURIComponent(region)}`;
+    }
+  </script>
 
 </body>
 </html>

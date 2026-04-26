@@ -25,7 +25,7 @@
     "nombre": "Volcán Poás",
     "region": "Alajuela",
     "descripcion": "Uno de los volcanes más visitados del país, famoso por su cráter activo y senderos accesibles.",
-    "imagen_portada": "assents/img/poas.jpg",
+    "imagen_portada": "assents/img/poas.webp",
     "actividades": ["Volcán", "Senderismo", "Miradores"],
     "mapTop": 45,
     "mapLeft": 55
@@ -35,7 +35,7 @@
     "nombre": "La Fortuna",
     "region": "Alajuela",
     "descripcion": "Destino turístico conocido por el Volcán Arenal, aguas termales y actividades de aventura.",
-    "imagen_portada": "assents/img/fortuna.jpg",
+    "imagen_portada": "assents/img/LaFortuna.jpg",
     "actividades": ["Aguas termales", "Volcán", "Aventura"],
     "mapTop": 30,
     "mapLeft": 40
@@ -46,7 +46,7 @@
     "nombre": "Barva",
     "region": "Heredia",
     "descripcion": "Zona montañosa cercana al Parque Nacional Braulio Carrillo, ideal para caminatas y naturaleza.",
-    "imagen_portada": "assents/img/barva.jpg",
+    "imagen_portada": "assents/img/Barva.jpg",
     "actividades": ["Senderismo", "Naturaleza", "Montaña"],
     "mapTop": 45,
     "mapLeft": 45
@@ -56,7 +56,7 @@
     "nombre": "Sarapiquí",
     "region": "Heredia",
     "descripcion": "Región famosa por su biodiversidad, ríos y actividades como rafting y observación de aves.",
-    "imagen_portada": "assents/img/sarapiqui.jpg",
+    "imagen_portada": "assents/img/Sarapiqui.webp",
     "actividades": ["Rafting", "Naturaleza", "Aves"],
     "mapTop": 35,
     "mapLeft": 65
@@ -77,7 +77,7 @@
     "nombre": "Cerro Chirripó",
     "region": "San José",
     "descripcion": "El punto más alto de Costa Rica, ideal para senderismo extremo y vistas panorámicas.",
-    "imagen_portada": "assents/img/chirripo.jpg",
+    "imagen_portada": "assents/img/Chirripo.webp",
     "actividades": ["Senderismo", "Montaña", "Aventura"],
     "mapTop": 75,
     "mapLeft": 60
@@ -109,7 +109,7 @@
     "nombre": "Puerto Viejo",
     "region": "Limón",
     "descripcion": "Destino caribeño con playas, cultura afrocaribeña y ambiente relajado.",
-    "imagen_portada": "assents/img/puertoviejo.jpg",
+    "imagen_portada": "assents/img/Puertoviejo.jpg",
     "actividades": ["Playa", "Cultura", "Surf"],
     "mapTop": 70,
     "mapLeft": 65
@@ -119,7 +119,7 @@
     "nombre": "Cahuita",
     "region": "Limón",
     "descripcion": "Parque nacional con playas, arrecifes de coral y gran biodiversidad.",
-    "imagen_portada": "assents/img/cahuita.jpg",
+    "imagen_portada": "assents/img/Cahuita.jpg",
     "actividades": ["Snorkel", "Naturaleza", "Playa"],
     "mapTop": 62,
     "mapLeft": 60
@@ -130,7 +130,7 @@
     "nombre": "Manuel Antonio",
     "region": "Puntarenas",
     "descripcion": "Parque nacional con playas paradisíacas y abundante vida silvestre.",
-    "imagen_portada": "assents/img/manuel.jpg",
+    "imagen_portada": "assents/img/antonio.jpg",
     "actividades": ["Playa", "Naturaleza", "Animales"],
     "mapTop": 55,
     "mapLeft": 55

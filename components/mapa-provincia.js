@@ -182,7 +182,7 @@ class MapaProvincia extends HTMLElement {
     puntos.forEach(punto => {
       punto.addEventListener("click", () => {
         const id = punto.dataset.id;
-        window.location.href = `/destino/?id=${encodeURIComponent(id)}`;
+       window.location.href = `../destino/?id=${encodeURIComponent(id)}&region=${encodeURIComponent(this.region)}`;
       });
     });
   }
