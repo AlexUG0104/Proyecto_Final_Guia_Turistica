@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(100deg, #90f6aa, #e6f4ea,#96bbf3);
+  color: #102a24;
+}
+
+.app-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2.6rem;
+  color: #082f25;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.volver {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #2d6a4f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.volver:hover {
+  text-decoration: underline;
+}
+
+.titulo-provincia {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1b4332;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #344e41;
+  margin-bottom: 2rem;
+}
+
+.card-mapa {
+  width: min(900px, 95%);
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card-mapa img {
+  width: 100%;
+  border-radius: 15px;
+}
