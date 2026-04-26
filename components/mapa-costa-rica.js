@@ -68,7 +68,9 @@ class MapaCostaRica extends HTMLElement {
     zonas.forEach((zona) => {
       zona.addEventListener("click", () => {
         const region = zona.dataset.region;
-       window.location.href = `/provincia/?region=${encodeURIComponent(region)}`;
+
+        // IMPORTANTE: sin "/" para GitHub Pages
+        window.location.href = `provincia/?region=${encodeURIComponent(region)}`;
       });
     });
   }
