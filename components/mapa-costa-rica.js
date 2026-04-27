@@ -33,23 +33,50 @@ class MapaCostaRica extends HTMLElement {
 
         .zona {
           position: absolute;
-          width: 60px;
-          height: 60px;
+          width: 35px;  /* Ajustado un poquito para que sea más fácil darle clic */
+          height: 35px;
           background: transparent;
+          border: none; /* ¡Esto elimina el círculo negro del botón! */
+          outline: none; /* Esto evita que salga un borde azul al darle clic */
           border-radius: 50%;
           cursor: pointer;
-          /* translate(-50%, -100%) hace que el (top, left) sea la PUNTA DE ABAJO del pin */
-          transform: translate(-50%, -100%);
-          transform-origin: bottom center;
-          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          /* translate(-50%, -50%) centra el botón exactamente en la coordenada top/left */
+          transform: translate(-50%, -50%);
           z-index: 10;
         }
 
-        /* Animación bonita en el ícono (pulso/glow desde la punta inferior) */
+        /* Highlight / Brillo transparente */
         .zona::before {
           content: '';
           position: absolute;
-          bottom: 0; /* Anclado a la base (la punta del pin) */
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.3s ease-in-out;
+          opacity: 0; 
+          box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8);
+          pointer-events: none; 
+        }
+
+        .zona:hover::before {
+          width: 45px;
+          height: 45px;
+          opacity: 1; 
+        }
+
+        .zona:hover {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Highlight / Brillo transparente */
+        .zona::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
           left: 50%;
           width: 0;
           height: 0;
@@ -57,45 +84,20 @@ class MapaCostaRica extends HTMLElement {
           border-radius: 50%;
           transform: translate(-50%, 50%);
           transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-          opacity: 0;
+          opacity: 0; /* Opacidad inicial de 0 como requerido */
           box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.9);
+          pointer-events: none; /* Que el brillo no estorbe el hitbox del pin */
         }
 
         .zona:hover::before {
-          width: 50px;
-          height: 50px;
-          opacity: 1;
+          width: 45px;
+          height: 45px;
+          opacity: 1; /* Transición suave a 1 solo al hacer hover en el pin */
         }
 
+        /* Solo se anima visualmente el glow y el pin se agranda sutilmente */
         .zona:hover {
-          transform: translate(-50%, -100%) scale(1.15) translateY(-5px);
-        }
-
-        /* Tooltip flotante con el nombre, rediseñado para look premium */
-        .zona::after {
-          content: attr(data-region);
-          position: absolute;
-          bottom: 110%;
-          left: 50%;
-          transform: translate(-50%, 15px);
-          background: #1a3c34;
-          color: #fff;
-          padding: 8px 18px;
-          border-radius: 12px;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-size: 0.95rem;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-          white-space: nowrap;
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-          box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .zona:hover::after {
-          opacity: 1;
-          transform: translate(-50%, -10px);
+          transform: translate(-50%, -100%) scale(1.15) translateY(-2px);
         }
 
         /* Coordenadas ajustadas: top y left ahora apuntan a la punta inferior del pin. */
@@ -111,21 +113,21 @@ class MapaCostaRica extends HTMLElement {
         .puntarenas { 
           top: 76%; 
           left: 60%; 
-          width: 80px; 
-          height: 80px; 
+          width: 35px; /* Reducido para evitar conflicto */
+          height: 35px; 
         }
       </style>
 
       <div class="mapa">
         <img src="assents/img/mapa-cr.png" alt="Mapa de Costa Rica por provincias">
 
-        <button class="zona guanacaste" data-region="Guanacaste" aria-label="Guanacaste"></button>
-        <button class="zona alajuela" data-region="Alajuela" aria-label="Alajuela"></button>
-        <button class="zona heredia" data-region="Heredia" aria-label="Heredia"></button>
-        <button class="zona limon" data-region="Limón" aria-label="Limón"></button>
-        <button class="zona san-jose" data-region="San José" aria-label="San José"></button>
-        <button class="zona cartago" data-region="Cartago" aria-label="Cartago"></button>
-        <button class="zona puntarenas" data-region="Puntarenas" aria-label="Puntarenas"></button>
+        <button id="guanacaste" class="zona guanacaste" data-region="Guanacaste" aria-label="Guanacaste"></button>
+        <button id="alajuela" class="zona alajuela" data-region="Alajuela" aria-label="Alajuela"></button>
+        <button id="heredia" class="zona heredia" data-region="Heredia" aria-label="Heredia"></button>
+        <button id="limon" class="zona limon" data-region="Limón" aria-label="Limón"></button>
+        <button id="san-jose" class="zona san-jose" data-region="San José" aria-label="San José"></button>
+        <button id="cartago" class="zona cartago" data-region="Cartago" aria-label="Cartago"></button>
+        <button id="puntarenas" class="zona puntarenas" data-region="Puntarenas" aria-label="Puntarenas"></button>
       </div>
     `;
   }
@@ -136,8 +138,16 @@ class MapaCostaRica extends HTMLElement {
     zonas.forEach((zona) => {
       zona.addEventListener("click", () => {
         const region = zona.dataset.region;
+        const id = zona.id;
 
-        
+        // Disparamos el CustomEvent para lógica posterior
+        this.dispatchEvent(new CustomEvent("provincia-seleccionada", {
+          detail: { id: id, region: region },
+          bubbles: true,
+          composed: true
+        }));
+
+        // IMPORTANTE: sin "/" para GitHub Pages
         window.location.href = `provincia/?region=${encodeURIComponent(region)}`;
       });
     });
