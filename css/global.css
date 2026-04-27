@@ -4,67 +4,121 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(100deg, #90f6aa, #e6f4ea,#96bbf3);
-  color: #102a24;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  background-color: #f2f7f4;
+  background-image: 
+    radial-gradient(at 10% 0%, hsla(145, 50%, 85%, 1) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, hsla(190, 60%, 85%, 1) 0px, transparent 50%),
+    radial-gradient(at 50% 90%, hsla(110, 40%, 85%, 1) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, hsla(45, 80%, 85%, 1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #1a3c34;
+  min-height: 100vh;
+}
+
+h1, h2, h3, .titulo-provincia {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
 }
 
 .app-container {
-  width: min(1100px, 92%);
+  width: min(1200px, 92%);
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1rem 0 3rem 0;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
+  animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #1b4332, #2d6a4f);
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 15px rgba(45, 106, 79, 0.3);
 }
 
 .hero h1 {
-  margin: 0 0 0.5rem;
-  font-size: 2.6rem;
+  margin: 0 0 1rem;
+  font-size: 4.5rem;
   color: #082f25;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  line-height: 1.1;
 }
 
 .hero p {
-  margin: 0;
-  font-size: 1.1rem;
-}
-.volver {
-  display: inline-block;
-  margin-bottom: 1rem;
+  margin: 0 auto;
+  font-size: 1.3rem;
   color: #2d6a4f;
+  font-weight: 500;
+  max-width: 600px;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.volver {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  color: #1b4332;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .volver:hover {
-  text-decoration: underline;
+  background: #fff;
+  transform: translateX(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  color: #082f25;
 }
 
 .titulo-provincia {
   text-align: center;
-  font-size: 2.5rem;
-  color: #1b4332;
-  margin-bottom: 0.5rem;
+  font-size: 3.8rem;
+  color: #082f25;
+  margin-bottom: 0.2rem;
 }
 
 .subtitulo {
   text-align: center;
-  color: #344e41;
-  margin-bottom: 2rem;
+  color: #2d6a4f;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
 }
 
 .card-mapa {
-  width: min(900px, 95%);
+  width: min(1050px, 95%);
   margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 30px;
+  padding: 2rem;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+  border: 1px solid rgba(255,255,255,0.8);
 }
 
 .card-mapa img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
