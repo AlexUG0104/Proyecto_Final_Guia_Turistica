@@ -72,23 +72,22 @@ Podés ver la aplicación funcionando aquí:
 4. La aplicación muestra el mapa de cantones de esa provincia.
 5. El usuario selecciona uno de los puntos turísticos disponibles.
 6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
+---
 
 
 ## 🧭 Guion de navegación
 
-```text
-{
-Página principal
-   ↓ clic en provincia
-Página de provincia
-   ↓ clic en punto turístico
-Página de destino
-   ↓ volver
-Página de provincia / Página principal
-}
+Página principal  
+↓ clic en provincia  
+Página de provincia  
+↓ clic en punto turístico  
+Página de destino  
+↓ volver  
+Página de provincia / Página principal  
 
+---
 
-### Estructura JSON
+## 📦 Estructura JSON
 
 ```json
 {
