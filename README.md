@@ -1,0 +1,73 @@
+# 🌴 Guía Turística Multimedia de Costa Rica
+
+## 📌 Descripción
+Aplicación web interactiva que permite explorar las provincias de Costa Rica y sus destinos turísticos mediante mapas dinámicos, imágenes y contenido multimedia.
+
+## Integrantes
+- Umaña Guevara Alexander C27912
+- Aguilar Alvarado Esteban C10098
+- Rojas Zuñiga Bryan Alonso C16913
+
+
+---
+
+## 🗺️ Regiones incluidas
+- Guanacaste
+- Alajuela
+- Heredia
+- San José
+- Cartago
+- Limón
+- Puntarenas
+
+---
+
+## 📍 Destinos
+Se implementan 2 destinos por provincia.
+
+---
+
+## 🎨 Wireframes / Diseño
+
+### Página principal
+![Home](CapReadme/Principal.png)
+
+### Página de provincia
+![Provincia](CapReadme/GuancaProvincia.png)
+
+### Página de destino
+![Destino](CapReadme/Destino.png)
+
+---
+
+## 🧩 Web Components
+
+### `<mapa-costa-rica>`
+- Muestra el mapa interactivo
+- Usa Shadow DOM
+- Permite seleccionar provincia
+
+### `<mapa-provincia>`
+- Carga mapa de cantones
+- Lee datos desde JSON
+- Renderiza puntos turísticos
+
+### `<destino-detalle>`
+- Muestra información del destino
+- Imagen, descripción y actividades
+
+---
+
+## 📦 Estructura JSON
+
+```json
+{
+  "id": "guanacaste-001",
+  "nombre": "Tamarindo",
+  "region": "Guanacaste",
+  "descripcion": "Playa turística...",
+  "imagen_portada": "assents/img/PuntoTamarindo.jpg",
+  "actividades": ["Surf", "Playa"],
+  "mapTop": 72,
+  "mapLeft": 30
+}
