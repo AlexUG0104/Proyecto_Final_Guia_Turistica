@@ -24,6 +24,12 @@ Aplicación web interactiva que permite explorar las provincias de Costa Rica y 
 
 ## 📍 Destinos
 Se implementan 2 destinos por provincia.
+---
+## 🌐 Demo del proyecto
+
+Podés ver la aplicación funcionando aquí:
+
+👉 https://alexug0104.github.io/Proyecto_Final_Guia_Turistica/
 
 ---
 
@@ -58,7 +64,7 @@ Se implementan 2 destinos por provincia.
 
 ---
 
-## 📦 Estructura JSON
+## Estructura JSON
 
 ```json
 {
