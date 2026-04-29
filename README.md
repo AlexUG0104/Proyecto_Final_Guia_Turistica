@@ -46,28 +46,6 @@ Podés ver la aplicación funcionando aquí:
 
 ---
 
-## 🎬 Storyboard
-
-1. El usuario ingresa a la página principal.
-2. Observa un mapa interactivo de Costa Rica.
-3. Selecciona una provincia dando clic sobre el mapa.
-4. La aplicación muestra el mapa de cantones de esa provincia.
-5. El usuario selecciona uno de los puntos turísticos disponibles.
-6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
-
----
-
-## 🧭 Guion de navegación
-
-```text
-Página principal
-   ↓ clic en provincia
-Página de provincia
-   ↓ clic en punto turístico
-Página de destino
-   ↓ volver
-Página de provincia / Página principal
-
 ## 🧩 Web Components
 
 ### `<mapa-costa-rica>`
@@ -86,6 +64,30 @@ Página de provincia / Página principal
 
 ---
 
+## 🎬 Storyboard
+
+1. El usuario ingresa a la página principal.
+2. Observa un mapa interactivo de Costa Rica.
+3. Selecciona una provincia dando clic sobre el mapa.
+4. La aplicación muestra el mapa de cantones de esa provincia.
+5. El usuario selecciona uno de los puntos turísticos disponibles.
+6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
+
+---
+## 🧭 Guion de navegación
+
+```text
+{
+Página principal
+   ↓ clic en provincia
+Página de provincia
+   ↓ clic en punto turístico
+Página de destino
+   ↓ volver
+Página de provincia / Página principal
+}
+
+
 ## Estructura JSON
 
 ```json
@@ -95,12 +97,7 @@ Página de provincia / Página principal
   "region": "Guanacaste",
   "descripcion": "Playa turística...",
   "imagen_portada": "assents/img/PuntoTamarindo.jpg",
-  "galeria": [],
-  "audio": "",
-  "video": "",
   "actividades": ["Surf", "Playa"],
-  "lat": 10.2993,
-  "lng": -85.8371,
   "mapTop": 72,
   "mapLeft": 30
 }
