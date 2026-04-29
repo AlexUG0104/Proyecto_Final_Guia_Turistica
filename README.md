@@ -76,15 +76,15 @@ Podés ver la aplicación funcionando aquí:
 
 
 ## 🧭 Guion de navegación
-```md
-```mermaid
-flowchart TD
-    A[Home] --> B[Seleccionar Provincia]
-    B --> C[Mapa de Cantones]
-    C --> D[Seleccionar Destino]
-    D --> E[Detalle del Destino]
-    E --> F[Volver]
-    F --> C
+
+Página principal  
+↓ clic en provincia  
+Página de provincia  
+↓ clic en punto turístico  
+Página de destino  
+↓ volver  
+Página de provincia / Página principal  
+
 ---
 
 ## 📦 Estructura JSON
