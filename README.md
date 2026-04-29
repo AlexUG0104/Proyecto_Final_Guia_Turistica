@@ -73,7 +73,7 @@ Podés ver la aplicación funcionando aquí:
 5. El usuario selecciona uno de los puntos turísticos disponibles.
 6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
 
----
+
 ## 🧭 Guion de navegación
 
 ```text
@@ -88,7 +88,7 @@ Página de provincia / Página principal
 }
 
 
-## Estructura JSON
+### Estructura JSON
 
 ```json
 {
