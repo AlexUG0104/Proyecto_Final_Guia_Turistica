@@ -74,7 +74,13 @@ Podés ver la aplicación funcionando aquí:
 6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
 ---
 
-
+## ⚙️ Tecnologías utilizadas
+1. HTML
+2. CSS
+3. JavaScript
+4. Web Components
+5. Shadow DOM
+---
 ## 🧭 Guion de navegación
 
 Página principal  
@@ -86,6 +92,19 @@ Página de destino
 Página de provincia / Página principal  
 
 ---
+## 🎥 Integración multimedia
+
+El proyecto incorpora contenido multimedia en la vista de cada destino turístico.
+
+Cada destino incluye:
+- Imagen principal
+- Descripción
+- Actividades
+- Video representativo del lugar
+
+Ejemplo implementado:
+- En el destino La Fortuna (Volcán Arenal) se muestra un video de fondo que mejora la experiencia visual del usuario.
+
 
 ## 📦 Estructura JSON
 
