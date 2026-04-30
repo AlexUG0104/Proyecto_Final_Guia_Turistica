@@ -14,7 +14,7 @@
     "nombre": "Rincón de la Vieja",
     "region": "Guanacaste",
     "descripcion": "Parque nacional con volcanes activos, senderos, cataratas y aguas termales. Ideal para aventura y naturaleza.",
-    "imagen_portada": "assents/img/rincondelavieja.jpg",
+    "imagen_portada": "assents/img/rincondelavieja1.png",
     "actividades": ["Senderismo", "Volcanes", "Aguas termales"],
     "mapTop": 42,
     "mapLeft": 50
@@ -35,7 +35,7 @@
     "nombre": "La Fortuna",
     "region": "Alajuela",
     "descripcion": "Destino turístico conocido por el Volcán Arenal, aguas termales y actividades de aventura.",
-    "imagen_portada": "assents/img/LaFortuna.jpg",
+    "imagen_portada": "assents/img/LaFortuna1.png",
     "actividades": ["Aguas termales", "Volcán", "Aventura"],
     "mapTop": 30,
     "mapLeft": 40
