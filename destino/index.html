@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,16 +9,19 @@
   <style>
     /* Estilos específicos para el video hero de La Fortuna */
     .hero-bg-video {
-      display: none; /* Oculto por defecto */
+      display: none;
+      /* Oculto por defecto */
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 60vh; /* Altura de la sección superior */
-      z-index: 0; /* Detrás del contenido pero sobre el fondo del body */
+      height: 60vh;
+      /* Altura de la sección superior */
+      z-index: 0;
+      /* Detrás del contenido pero sobre el fondo del body */
       overflow: hidden;
     }
-    
+
     .hero-bg-video video {
       width: 100%;
       height: 100%;
@@ -31,7 +35,7 @@
       width: 100%;
       height: 100%;
       /* Overlay oscuro ligero para mejorar legibilidad */
-      background: rgba(0, 0, 0, 0.2); 
+      background: rgba(0, 0, 0, 0.2);
     }
 
     .hero-fade {
@@ -51,6 +55,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Contenedor del video (Se activa por JS dependiendo del destino) -->
@@ -87,7 +92,7 @@
     // Rutas de videos asignadas a los ID de los destinos
     const videosDestino = {
       "alajuela-002": "../assents/video/volcan.mp4",               // La Fortuna (Arenal)
-      "alajuela-001": "../assentsvideo/volcanPoas.mp4",           // Volcán Poás
+      "alajuela-001": "../assents/video/volcanPoas.mp4",           // Volcán Poás
       "guanacaste-002": "../assents/video/volcanRinconDeLaVielja.mp4", // Rincón de la Vieja
       "guanacaste-001": "../assents/video/Tamarindo.mp4",          // Tamarindo
       "heredia-001": "../assents/video/Barva.mp4",                 // Barva
@@ -106,11 +111,12 @@
     if (videosDestino[id]) {
       const container = document.getElementById("heroVideoContainer");
       const videoEl = document.getElementById("heroVideoElement");
-      
+
       videoEl.src = videosDestino[id];
       container.style.display = "block";
     }
   </script>
 
 </body>
+
 </html>
