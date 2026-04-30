@@ -5,8 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Destino | Guía Turística CR</title>
   <link rel="stylesheet" href="../css/global.css" />
+  <style>
+    /* Estilos específicos para el video hero de La Fortuna */
+    .hero-bg-video {
+      display: none; /* Oculto por defecto */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh; /* Altura de la sección superior */
+      z-index: 0; /* Detrás del contenido pero sobre el fondo del body */
+      overflow: hidden;
+    }
+    
+    .hero-bg-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Overlay oscuro ligero para mejorar legibilidad */
+      background: rgba(0, 0, 0, 0.2); 
+    }
+
+    .hero-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      /* Difuminado hacia el color de fondo del sitio para integrarlo */
+      background: linear-gradient(to bottom, transparent, #f2f7f4);
+    }
+
+    /* Asegurar que el contenido principal quede sobre el video */
+    .app-container {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Contenedor del video (Se activa por JS dependiendo del destino) -->
+  <div class="hero-bg-video" id="heroVideoContainer">
+    <video id="heroVideoElement" autoplay loop muted playsinline></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-fade"></div>
+  </div>
 
   <app-header></app-header>
 
@@ -25,10 +77,38 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const region = params.get("region");
+    const id = params.get("id");
 
     if (region) {
       document.getElementById("volverProvincia").href =
         `../provincia/?region=${encodeURIComponent(region)}`;
+    }
+
+    // Rutas de videos asignadas a los ID de los destinos
+    const videosDestino = {
+      "alajuela-002": "../assents/img/video/volcan.mp4",               // La Fortuna (Arenal)
+      "alajuela-001": "../assents/img/video/volcanPoas.mp4",           // Volcán Poás
+      "guanacaste-002": "../assents/img/video/volcanRinconDeLaVielja.mp4", // Rincón de la Vieja
+      "guanacaste-001": "../assents/img/video/Tamarindo.mp4",          // Tamarindo
+      "heredia-001": "../assents/img/video/Barva.mp4",                 // Barva
+      "heredia-002": "../assents/img/video/Sarapiqui.mp4",             // Sarapiquí
+      "san-jose-001": "../assents/img/video/teatroNacional.mp4",       // Teatro Nacional
+      "san-jose-002": "../assents/img/video/cerroChirripo.mp4",        // Cerro Chirripó
+      "cartago-001": "../assents/img/video/volcanIrazu.mp4",           // Volcán Irazú
+      "cartago-002": "../assents/img/video/valleDeOrosi.mp4",          // Valle de Orosi
+      "limon-001": "../assents/img/video/puertoViejo.mp4",             // Puerto Viejo
+      "limon-002": "../assents/img/video/Cahuita.mp4",                 // Cahuita
+      "puntarenas-001": "../assents/img/video/manuelAntonio.mp4",      // Manuel Antonio
+      "puntarenas-002": "../assents/img/video/uvita.mp4"               // Uvita
+    };
+
+    // Mostrar el video hero si el destino tiene uno configurado
+    if (videosDestino[id]) {
+      const container = document.getElementById("heroVideoContainer");
+      const videoEl = document.getElementById("heroVideoElement");
+      
+      videoEl.src = videosDestino[id];
+      container.style.display = "block";
     }
   </script>
 
