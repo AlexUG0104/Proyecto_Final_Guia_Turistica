@@ -109,7 +109,7 @@
     "nombre": "Puerto Viejo",
     "region": "Limón",
     "descripcion": "Destino caribeño con playas, cultura afrocaribeña y ambiente relajado.",
-    "imagen_portada": "assents/img/Puertoviejo.jpg",
+    "imagen_portada": "assents/img/PuertoViejo.jpg",
     "actividades": ["Playa", "Cultura", "Surf"],
     "mapTop": 70,
     "mapLeft": 65
