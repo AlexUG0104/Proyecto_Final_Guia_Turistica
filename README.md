@@ -115,7 +115,23 @@ Ejemplo implementado:
   "region": "Guanacaste",
   "descripcion": "Playa turística...",
   "imagen_portada": "assents/img/PuntoTamarindo.jpg",
+  "galeria": [],
+  "audio": "assents/audio/tamarindo.mp3",
+  "video": "assents/video/Tamarindo.mp4",
   "actividades": ["Surf", "Playa"],
+  "lat": 10.2993,
+  "lng": -85.8400,
   "mapTop": 72,
   "mapLeft": 30
 }
+```
+
+---
+
+## 🚀 Avance Fase 2
+
+- **Custom Elements implementados:** Ya se definieron al menos 4 componentes (`<app-header>`, `<mapa-costa-rica>`, `<mapa-provincia>`, `<destino-detalle>`, `<audio-guia>`).
+- **Shadow DOM aplicado:** Todos los Web Components utilizan Shadow DOM para encapsular su estilo y estructura.
+- **JSON con más de 3 destinos:** El archivo `destinos.json` contiene la información de más de 10 destinos, todos con su estructura base completa.
+- **Audio integrado:** Se integró el componente `<audio-guia>` en la vista de detalle de cada destino, permitiendo la reproducción de audios.
+- **Video integrado:** Los videos siguen funcionales y representativos por destino en el fondo de la pantalla.

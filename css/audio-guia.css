@@ -1,0 +1,22 @@
+.audio-container {
+  margin: 1.5rem 0;
+  padding: 1.2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #2d6a4f;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.audio-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #1b4332;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+audio {
+  width: 100%;
+  outline: none;
+}
+audio::-webkit-media-controls-panel {
+  background-color: #d8f3dc;
+}

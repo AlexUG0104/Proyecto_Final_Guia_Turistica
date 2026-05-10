@@ -1,3 +1,5 @@
+import './audio-guia.js';
+
 class DestinoDetalle extends HTMLElement {
   constructor() {
     super();
@@ -33,60 +35,16 @@ class DestinoDetalle extends HTMLElement {
       return;
     }
 
+    let mapsUrl = "";
+    if (this.destino.lat && this.destino.lng) {
+      mapsUrl = `https://www.google.com/maps?q=${this.destino.lat},${this.destino.lng}`;
+    } else if (this.destino.direccion) {
+      mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(this.destino.direccion)}`;
+    }
+
+    const cssUrl = new URL('../css/destino-detalle.css', import.meta.url).href;
     this.shadowRoot.innerHTML = `
-      <style>
-        .detalle {
-          max-width: 1000px;
-          margin: 0 auto;
-          background: white;
-          border-radius: 22px;
-          overflow: hidden;
-          box-shadow: 0 15px 35px rgba(0,0,0,.15);
-        }
-
-        .portada {
-          width: 100%;
-          height: 360px;
-          object-fit: cover;
-          display: block;
-        }
-
-        .contenido {
-          padding: 2rem;
-        }
-
-        h1 {
-          color: #1b4332;
-          font-size: 2.5rem;
-          margin: 0 0 0.5rem;
-        }
-
-        .region {
-          color: #2d6a4f;
-          font-weight: bold;
-          margin-bottom: 1rem;
-        }
-
-        .descripcion {
-          line-height: 1.7;
-          color: #344e41;
-        }
-
-        .actividades {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.6rem;
-          margin-top: 1rem;
-        }
-
-        .actividad {
-          background: #d8f3dc;
-          color: #1b4332;
-          padding: 0.4rem 0.8rem;
-          border-radius: 999px;
-          font-weight: bold;
-        }
-      </style>
+      <link rel="stylesheet" href="${cssUrl}">
 
       <article class="detalle">
         <img 
@@ -106,6 +64,14 @@ class DestinoDetalle extends HTMLElement {
               <span class="actividad">${act}</span>
             `).join("")}
           </div>
+          
+          ${mapsUrl ? `
+            <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-maps">
+              📍 Cómo llegar
+            </a>
+          ` : ''}
+
+          ${this.destino.audio ? `<audio-guia src="../${this.destino.audio}" label="Escucha la guía de ${this.destino.nombre}"></audio-guia>` : ''}
         </div>
       </article>
     `;
