@@ -67,7 +67,7 @@ class DestinoDetalle extends HTMLElement {
           
           ${mapsUrl ? `
             <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-maps">
-              📍 Cómo llegar
+              Cómo llegar
             </a>
           ` : ''}
 

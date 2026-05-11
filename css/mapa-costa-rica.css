@@ -5,7 +5,7 @@
   background: rgba(255, 255, 255, 0.4);
   padding: 1.5rem;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
@@ -14,7 +14,7 @@
   width: 100%;
   display: block;
   border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
 }
 
 .zona {
@@ -85,7 +85,7 @@
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .zona:hover::after {
@@ -93,16 +93,39 @@
   transform: translate(-50%, -10px);
 }
 
-.guanacaste { top: 34%; left: 19%; }
-.alajuela   { top: 31%; left: 40%; }
-.heredia    { top: 36%; left: 58%; }
-.limon      { top: 58%; left: 77%; }
-.san-jose   { top: 54%; left: 51%; }
-.cartago    { top: 54%; left: 63%; }
+.guanacaste {
+  top: 34%;
+  left: 19%;
+}
 
-.puntarenas { 
-  top: 76%; 
-  left: 60%; 
-  width: 80px; 
-  height: 80px; 
+.alajuela {
+  top: 31%;
+  left: 40%;
+}
+
+.heredia {
+  top: 31%;
+  left: 55%;
+}
+
+.limon {
+  top: 49%;
+  left: 77%;
+}
+
+.san-jose {
+  top: 53%;
+  left: 48%;
+}
+
+.cartago {
+  top: 52%;
+  left: 61%;
+}
+
+.puntarenas {
+  top: 76%;
+  left: 72%;
+  width: 80px;
+  height: 80px;
 }
