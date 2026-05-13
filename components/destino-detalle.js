@@ -11,6 +11,7 @@ class DestinoDetalle extends HTMLElement {
     const id = this.obtenerId();
     await this.cargarDestino(id);
     this.render();
+    this.notificarDestinoCargado();
   }
 
   obtenerId() {
@@ -23,6 +24,14 @@ class DestinoDetalle extends HTMLElement {
     const datos = await respuesta.json();
 
     this.destino = datos.find(destino => destino.id === id);
+  }
+
+  notificarDestinoCargado() {
+    this.dispatchEvent(new CustomEvent("destino-cargado", {
+      detail: { destino: this.destino },
+      bubbles: true,
+      composed: true
+    }));
   }
 
   render() {

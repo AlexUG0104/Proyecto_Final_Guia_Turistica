@@ -7,7 +7,7 @@
   <title>Destino | Guía Turística CR</title>
   <link rel="stylesheet" href="../css/global.css" />
   <style>
-    /* Estilos específicos para el video hero de La Fortuna */
+    /* Estilos para el video hero del destino seleccionado */
     .hero-bg-video {
       display: none;
       /* Oculto por defecto */
@@ -78,43 +78,30 @@
   <script type="module" src="../components/app-header.js"></script>
   <script type="module" src="../components/destino-detalle.js"></script>
 
-  <!-- 🔥 ESTE SCRIPT VA AQUÍ -->
   <script>
     const params = new URLSearchParams(window.location.search);
     const region = params.get("region");
-    const id = params.get("id");
 
     if (region) {
       document.getElementById("volverProvincia").href =
         `../provincia/?region=${encodeURIComponent(region)}`;
     }
 
-    // Rutas de videos asignadas a los ID de los destinos
-    const videosDestino = {
-      "alajuela-002": "../assents/video/volcan.mp4",               // La Fortuna (Arenal)
-      "alajuela-001": "../assents/video/volcanPoas.mp4",           // Volcán Poás
-      "guanacaste-002": "../assents/video/volcanRinconDeLaVielja.mp4", // Rincón de la Vieja
-      "guanacaste-001": "../assents/video/Tamarindo.mp4",          // Tamarindo
-      "heredia-001": "../assents/video/Barva.mp4",                 // Barva
-      "heredia-002": "../assents/video/Sarapiqui.mp4",             // Sarapiquí
-      "san-jose-001": "../assents/video/teatroNacional.mp4",       // Teatro Nacional
-      "san-jose-002": "../assents/video/cerroChirripo.mp4",        // Cerro Chirripó
-      "cartago-001": "../assents/video/volcanIrazu.mp4",           // Volcán Irazú
-      "cartago-002": "../assents/video/valleDeOrosi.mp4",          // Valle de Orosi
-      "limon-001": "../assents/video/puertoViejo.mp4",             // Puerto Viejo
-      "limon-002": "../assents/video/Cahuita.mp4",                 // Cahuita
-      "puntarenas-001": "../assents/video/manuelAntonio.mp4",      // Manuel Antonio
-      "puntarenas-002": "../assents/video/uvita.mp4"               // Uvita
-    };
-
-    // Mostrar el video hero si el destino tiene uno configurado
-    if (videosDestino[id]) {
+    document.addEventListener("destino-cargado", (event) => {
+      const video = event.detail.destino?.video;
       const container = document.getElementById("heroVideoContainer");
       const videoEl = document.getElementById("heroVideoElement");
 
-      videoEl.src = videosDestino[id];
+      if (!video) {
+        videoEl.removeAttribute("src");
+        videoEl.load();
+        container.style.display = "none";
+        return;
+      }
+
+      videoEl.src = `../${video}`;
       container.style.display = "block";
-    }
+    });
   </script>
 
 </body>
