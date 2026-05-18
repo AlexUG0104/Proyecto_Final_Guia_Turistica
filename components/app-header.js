@@ -15,20 +15,20 @@ class AppHeader extends HTMLElement {
       <link rel="stylesheet" href="${cssUrl}">
 
       <header>
-        <h2>Guía CR</h2>
+        <a href="/" style="text-decoration: none;"><h2>Guía CR</h2></a>
         <nav>
-          <button data-region="Caribe">Caribe</button>
+          <button data-region="Limón">Caribe</button>
           <button data-region="Guanacaste">Guanacaste</button>
-          <button data-region="Central">Central</button>
-          <button data-region="Sur">Sur</button>
+          <button data-region="San José">Central</button>
+          <button data-region="Puntarenas">Sur</button>
+          <button id="btn-sorpresa" class="btn-sorpresa">¡Destino Sorpresa!</button>
         </nav>
       </header>
     `;
   }
 
   addEvents() {
-    const buttons = this.shadowRoot.querySelectorAll("button");
-
+    const buttons = this.shadowRoot.querySelectorAll("button:not(#btn-sorpresa)");
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         const region = btn.dataset.region;
@@ -36,6 +36,26 @@ class AppHeader extends HTMLElement {
         window.location.href = `${provinciaUrl}?region=${encodeURIComponent(region)}`;
       });
     });
+
+    const btnSorpresa = this.shadowRoot.getElementById("btn-sorpresa");
+    if (btnSorpresa) {
+      btnSorpresa.addEventListener("click", async () => {
+        btnSorpresa.textContent = "Buscando...";
+        btnSorpresa.classList.add("animando");
+        try {
+          const dataUrl = new URL('../data/destinos.json', import.meta.url).href;
+          const respuesta = await fetch(dataUrl);
+          const destinos = await respuesta.json();
+          const aleatorio = destinos[Math.floor(Math.random() * destinos.length)];
+          const destinoUrl = new URL('../destino/', import.meta.url).href;
+          window.location.href = `${destinoUrl}?id=${encodeURIComponent(aleatorio.id)}&region=${encodeURIComponent(aleatorio.region)}`;
+        } catch (error) {
+          console.error("Error obteniendo destino sorpresa:", error);
+          btnSorpresa.textContent = " ¡Destino Sorpresa!";
+          btnSorpresa.classList.remove("animando");
+        }
+      });
+    }
   }
 }
 
