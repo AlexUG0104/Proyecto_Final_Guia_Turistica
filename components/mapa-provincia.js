@@ -19,13 +19,13 @@ class MapaProvincia extends HTMLElement {
 
   obtenerImagenProvincia() {
     const imagenes = {
-      "Guanacaste": "../assents/img/Mapa_de_Guanacaste_cantones.jpg",
-      "Alajuela": "../assents/img/Alajuelacantones.png",
-      "Heredia": "../assents/img/heredia-cantones.gif",
-      "San José": "../assents/img/SanJoseCantones.png",
-      "Cartago": "../assents/img/cartagocantones.png",
-      "Limón": "../assents/img/limoncantones.gif",
-      "Puntarenas": "../assents/img/Puntarenascantones.png"
+      "Guanacaste": "../assents/img/guanacaste/Mapa_de_Guanacaste_cantones.jpg",
+      "Alajuela": "../assents/img/alajuela/Alajuelacantones.png",
+      "Heredia": "../assents/img/heredia/heredia-cantones.gif",
+      "San José": "../assents/img/san-jose/SanJoseCantones.png",
+      "Cartago": "../assents/img/cartago/cartagocantones.png",
+      "Limón": "../assents/img/limon/limoncantones.gif",
+      "Puntarenas": "../assents/img/puntarenas/Puntarenascantones.png"
     };
 
     return imagenes[this.region];
