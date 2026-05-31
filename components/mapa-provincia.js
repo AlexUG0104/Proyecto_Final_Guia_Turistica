@@ -77,9 +77,14 @@ class MapaProvincia extends HTMLElement {
 
         <div class="lista">
           ${this.destinos.map(destino => `
-            <article class="destino">
-              <h3>${destino.nombre}</h3>
-              <p>${destino.region}</p>
+            <article class="destino" data-id="${destino.id}" tabindex="0" role="button" aria-label="Ver ${destino.nombre}">
+              <div class="destino-img">
+                <img src="../${destino.imagen_portada}" alt="${destino.nombre}" loading="lazy">
+              </div>
+              <div class="destino-body">
+                <h3>${destino.nombre}</h3>
+                <p>${destino.region}</p>
+              </div>
             </article>
           `).join("")}
         </div>
@@ -89,11 +94,28 @@ class MapaProvincia extends HTMLElement {
 
   addEvents() {
     const puntos = this.shadowRoot.querySelectorAll(".punto-turistico");
+    const tarjetas = this.shadowRoot.querySelectorAll(".destino");
+
+    const irADestino = (id) => {
+      window.location.href = `../destino/?id=${encodeURIComponent(id)}&region=${encodeURIComponent(this.region)}`;
+    };
 
     puntos.forEach(punto => {
       punto.addEventListener("click", () => {
-        const id = punto.dataset.id;
-       window.location.href = `../destino/?id=${encodeURIComponent(id)}&region=${encodeURIComponent(this.region)}`;
+        irADestino(punto.dataset.id);
+      });
+    });
+
+    tarjetas.forEach(tarjeta => {
+      tarjeta.addEventListener("click", () => {
+        irADestino(tarjeta.dataset.id);
+      });
+
+      tarjeta.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          irADestino(tarjeta.dataset.id);
+        }
       });
     });
   }

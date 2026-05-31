@@ -27,6 +27,12 @@ class DestinoDetalle extends HTMLElement {
     this.destino = datos.find(destino => destino.id === id);
   }
 
+  obtenerImagenActividad(actividad, index) {
+    return actividad.imagen
+      || this.destino.galeria?.[index + 1]
+      || this.destino.imagen_portada;
+  }
+
   notificarDestinoCargado() {
     this.dispatchEvent(new CustomEvent("destino-cargado", {
       detail: { destino: this.destino },
@@ -92,7 +98,7 @@ class DestinoDetalle extends HTMLElement {
               <div class="galeria-grid">
                 ${this.destino.galeria.map((img, index) => `
                   <div class="galeria-item ${index === 0 ? 'active' : ''}" data-src="../${img}">
-                    <img src="../${img}" alt="Galería ${this.destino.nombre} ${index + 1}">
+                    <img src="../${img}" alt="Imagen ${index + 1} de ${this.destino.nombre}" loading="lazy">
                   </div>
                 `).join("")}
               </div>
@@ -128,10 +134,10 @@ class DestinoDetalle extends HTMLElement {
             <section class="actividades-detalle-seccion">
               <h2 class="seccion-titulo">Actividades Recomendadas</h2>
               <div class="actividades-grid">
-                ${this.destino.actividades.map(act => `
+                ${this.destino.actividades.map((act, index) => `
                   <article class="actividad-tarjeta">
                     <div class="actividad-img-container">
-                      <img src="../${act.imagen}" alt="${act.nombre}">
+                      <img src="../${this.obtenerImagenActividad(act, index)}" alt="${act.nombre} en ${this.destino.nombre}" loading="lazy">
                     </div>
                     <div class="actividad-tarjeta-body">
                       <h3>${act.nombre}</h3>

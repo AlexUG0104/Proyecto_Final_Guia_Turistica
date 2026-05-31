@@ -6,10 +6,10 @@
     "descripcion": "Playa reconocida por el surf, atardeceres y vida turística. Es uno de los destinos más visitados del Pacífico Norte.",
     "imagen_portada": "assents/img/guanacaste/tamarindo/portada.jpg",
     "galeria": [
-      "assents/img/guanacaste/tamarindo/portada.jpg",
-      "assents/img/guanacaste/tamarindo/galeria-1.jpg",
-      "assents/img/guanacaste/tamarindo/galeria-2.jpg",
-      "assents/img/guanacaste/tamarindo/galeria-3.jpg"
+      "assents/img/guanacaste/tamarindo/galeria-nueva-1.jpg",
+      "assents/img/guanacaste/tamarindo/galeria-nueva-2.jpg",
+      "assents/img/guanacaste/tamarindo/galeria-nueva-3.jpg",
+      "assents/img/guanacaste/tamarindo/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/tamarindo.mp3",
     "video": "assents/img/guanacaste/tamarindo/video.mp4",
@@ -17,17 +17,17 @@
       {
         "nombre": "Surf",
         "descripcion": "Disfruta de las mejores olas del país. Perfecto tanto para principiantes como para surfistas experimentados con instructores locales.",
-        "imagen": "assents/img/guanacaste/tamarindo/actividad-1.jpg"
+        "imagen": "assents/img/guanacaste/tamarindo/actividad-nueva-1.jpg"
       },
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/guanacaste/tamarindo/actividad-2.jpg"
+        "imagen": "assents/img/guanacaste/tamarindo/actividad-nueva-2.jpg"
       },
       {
         "nombre": "Atardeceres",
         "descripcion": "Contempla atardeceres mágicos con tonos rojizos y dorados que pintan el cielo sobre el horizonte marino.",
-        "imagen": "assents/img/guanacaste/tamarindo/actividad-3.jpg"
+        "imagen": "assents/img/guanacaste/tamarindo/actividad-nueva-3.jpg"
       }
     ],
     "direccion": "Tamarindo, Santa Cruz, Guanacaste, Costa Rica",
@@ -48,10 +48,10 @@
     "descripcion": "Parque nacional con volcanes activos, senderos, cataratas y aguas termales. Ideal para aventura y naturaleza.",
     "imagen_portada": "assents/img/guanacaste/rincon-de-la-vieja/portada.jpg",
     "galeria": [
-      "assents/img/guanacaste/rincon-de-la-vieja/portada.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-1.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-2.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-3.jpg"
+      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-1.jpg",
+      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-2.jpg",
+      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-3.jpg",
+      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/rincondelavieja.mp3",
     "video": "assents/img/guanacaste/rincon-de-la-vieja/video.mp4",
@@ -59,17 +59,17 @@
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-1.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-1.jpg"
       },
       {
         "nombre": "Volcanes",
         "descripcion": "Admira la imponencia del volcán y sus formaciones geológicas únicas desde miradores estratégicos totalmente seguros.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-2.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-2.jpg"
       },
       {
         "nombre": "Aguas termales",
         "descripcion": "Relaja tu cuerpo y mente en las cálidas aguas termales de origen mineral, calentadas naturalmente por la actividad volcánica.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-3.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-3.jpg"
       }
     ],
     "direccion": "Parque Nacional Rincón de la Vieja, Liberia, Guanacaste, Costa Rica",
@@ -426,10 +426,10 @@
     "descripcion": "Destino caribeño con playas, cultura afrocaribeña y ambiente relajado.",
     "imagen_portada": "assents/img/limon/puerto-viejo/portada.jpg",
     "galeria": [
-      "assents/img/limon/puerto-viejo/portada.jpg",
-      "assents/img/limon/puerto-viejo/galeria-1.jpg",
-      "assents/img/limon/puerto-viejo/galeria-2.jpg",
-      "assents/img/limon/puerto-viejo/galeria-3.jpg"
+      "assents/img/limon/puerto-viejo/galeria-nueva-1.jpg",
+      "assents/img/limon/puerto-viejo/galeria-nueva-2.jpg",
+      "assents/img/limon/puerto-viejo/galeria-nueva-3.jpg",
+      "assents/img/limon/puerto-viejo/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/puertoviejo.mp3",
     "video": "assents/img/limon/puerto-viejo/video.mp4",
@@ -437,17 +437,17 @@
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/limon/puerto-viejo/actividad-1.jpg"
+        "imagen": "assents/img/limon/puerto-viejo/playa-puerto-viejo.png"
       },
       {
         "nombre": "Cultura",
         "descripcion": "Conoce la rica identidad costarricense a través de su arte, música, tradiciones populares y la calidez de su gente.",
-        "imagen": "assents/img/limon/puerto-viejo/actividad-2.jpg"
+        "imagen": "assents/img/limon/puerto-viejo/actividad-nueva-2.jpg"
       },
       {
         "nombre": "Surf",
         "descripcion": "Disfruta de las mejores olas del país. Perfecto tanto para principiantes como para surfistas experimentados con instructores locales.",
-        "imagen": "assents/img/limon/puerto-viejo/actividad-3.jpg"
+        "imagen": "assents/img/limon/puerto-viejo/actividad-nueva-3.jpg"
       }
     ],
     "direccion": "Puerto Viejo de Talamanca, Limón, Costa Rica",
@@ -468,10 +468,10 @@
     "descripcion": "Parque nacional con playas, arrecifes de coral y gran biodiversidad.",
     "imagen_portada": "assents/img/limon/cahuita/portada.jpg",
     "galeria": [
-      "assents/img/limon/cahuita/portada.jpg",
-      "assents/img/limon/cahuita/galeria-1.jpg",
-      "assents/img/limon/cahuita/galeria-2.jpg",
-      "assents/img/limon/cahuita/galeria-3.jpg"
+      "assents/img/limon/cahuita/galeria-rotulo.jpg",
+      "assents/img/limon/cahuita/galeria-palmeras.jpg",
+      "assents/img/limon/cahuita/galeria-aerea.jpg",
+      "assents/img/limon/cahuita/galeria-sendero.jpg"
     ],
     "audio": "assents/audio/cahuita.mp3",
     "video": "assents/img/limon/cahuita/video.mp4",
@@ -479,17 +479,17 @@
       {
         "nombre": "Snorkel",
         "descripcion": "Explora arrecifes de coral rebosantes de vida marina, peces de colores, tortugas y mantarrayas en aguas cristalinas.",
-        "imagen": "assents/img/limon/cahuita/actividad-1.jpg"
+        "imagen": "assents/img/limon/cahuita/snorkel-cahuita.png"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/limon/cahuita/actividad-2.jpg"
+        "imagen": "assents/img/limon/cahuita/actividad-nueva-2.jpg"
       },
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/limon/cahuita/actividad-3.jpg"
+        "imagen": "assents/img/limon/cahuita/playa-cahuita.jpg"
       }
     ],
     "direccion": "Parque Nacional Cahuita, Limón, Costa Rica",
@@ -510,10 +510,10 @@
     "descripcion": "Parque nacional con playas paradisíacas y abundante vida silvestre.",
     "imagen_portada": "assents/img/puntarenas/manuel-antonio/portada.jpg",
     "galeria": [
-      "assents/img/puntarenas/manuel-antonio/portada.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-1.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-2.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-3.jpg"
+      "assents/img/puntarenas/manuel-antonio/galeria-rotulo.jpg",
+      "assents/img/puntarenas/manuel-antonio/galeria-sendero.jpg",
+      "assents/img/puntarenas/manuel-antonio/galeria-rocas.png",
+      "assents/img/puntarenas/manuel-antonio/galeria-playa.jpg"
     ],
     "audio": "assents/audio/manuelantonio.mp3",
     "video": "assents/img/puntarenas/manuel-antonio/video.mp4",
@@ -521,17 +521,17 @@
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-1.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/playa-manuel-antonio.jpg"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-2.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/naturaleza-manuel-antonio.jpg"
       },
       {
         "nombre": "Animales",
         "descripcion": "Encuentra monos, perezosos, iguanas y coatíes en su entorno natural a solo unos pasos del sendero principal.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-3.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/mono-capuchino.jpg"
       }
     ],
     "direccion": "Parque Nacional Manuel Antonio, Quepos, Puntarenas, Costa Rica",
@@ -552,10 +552,10 @@
     "descripcion": "Famosa por el Parque Nacional Marino Ballena y su formación natural en forma de cola de ballena.",
     "imagen_portada": "assents/img/puntarenas/uvita/portada.jpg",
     "galeria": [
-      "assents/img/puntarenas/uvita/portada.jpg",
-      "assents/img/puntarenas/uvita/galeria-1.jpg",
-      "assents/img/puntarenas/uvita/galeria-2.jpg",
-      "assents/img/puntarenas/uvita/galeria-3.jpg"
+      "assents/img/puntarenas/uvita/galeria-nueva-1.jpg",
+      "assents/img/puntarenas/uvita/uvita1.png",
+      "assents/img/puntarenas/uvita/uvita2.png",
+      "assents/img/puntarenas/uvita/uvita3.png"
     ],
     "audio": "assents/audio/uvita.mp3",
     "video": "assents/img/puntarenas/uvita/video.mp4",
@@ -563,17 +563,17 @@
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/puntarenas/uvita/actividad-1.jpg"
+        "imagen": "assents/img/puntarenas/uvita/actividad-nueva-1.jpg"
       },
       {
         "nombre": "Ballenas",
         "descripcion": "Vive la emocionante experiencia de observar el paso de majestuosas ballenas jorobadas y delfines en el océano Pacífico.",
-        "imagen": "assents/img/puntarenas/uvita/actividad-2.jpg"
+        "imagen": "assents/img/puntarenas/uvita/ballena.png"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/puntarenas/uvita/actividad-3.jpg"
+        "imagen": "assents/img/puntarenas/uvita/naturaleza.png"
       }
     ],
     "direccion": "Uvita, Osa, Puntarenas, Costa Rica",
