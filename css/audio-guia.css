@@ -20,3 +20,13 @@ audio {
 audio::-webkit-media-controls-panel {
   background-color: #d8f3dc;
 }
+
+@media (max-width: 600px) {
+  .audio-container {
+    padding: 1rem;
+  }
+
+  .audio-label {
+    font-size: 1rem;
+  }
+}

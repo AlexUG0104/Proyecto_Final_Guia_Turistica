@@ -67,3 +67,44 @@ h1 {
 .btn-maps:hover {
   background-color: #2d6a4f;
 }
+
+@media (max-width: 900px) {
+  .detalle {
+    margin: 0 0.75rem;
+  }
+
+  .portada {
+    height: 280px;
+  }
+
+  .contenido {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .detalle {
+    border-radius: 18px;
+  }
+
+  .portada {
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .contenido {
+    padding: 1.25rem;
+  }
+
+  .actividades {
+    gap: 0.5rem;
+  }
+
+  .btn-maps {
+    width: 100%;
+    text-align: center;
+  }
+}

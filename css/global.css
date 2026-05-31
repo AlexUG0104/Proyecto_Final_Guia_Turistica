@@ -122,3 +122,51 @@ h1, h2, h3, .titulo-provincia {
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
+
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 100%;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  .card-mapa {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .app-container {
+    padding: 1rem;
+  }
+
+  .volver {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-mapa {
+    padding: 1rem;
+  }
+}

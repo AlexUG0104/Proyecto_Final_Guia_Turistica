@@ -87,3 +87,25 @@ img {
 .destino p {
   margin: 0;
 }
+
+@media (max-width: 900px) {
+  .card {
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    border-radius: 16px;
+  }
+
+  .punto-turistico {
+    width: 18px;
+    height: 18px;
+  }
+
+  .punto-turistico span {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.45rem;
+  }
+}
