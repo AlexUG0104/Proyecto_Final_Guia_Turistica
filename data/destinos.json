@@ -9,7 +9,7 @@
       "assents/img/guanacaste/tamarindo/galeria-nueva-1.jpg",
       "assents/img/guanacaste/tamarindo/galeria-nueva-2.jpg",
       "assents/img/guanacaste/tamarindo/galeria-nueva-3.jpg",
-      "assents/img/guanacaste/tamarindo/galeria-nueva-4.jpg"
+      "assents/img/guanacaste/tamarindo/letras-Tamarindo.png"
     ],
     "audio": "assents/audio/tamarindo.mp3",
     "video": "assents/img/guanacaste/tamarindo/video.mp4",
@@ -17,7 +17,7 @@
       {
         "nombre": "Surf",
         "descripcion": "Disfruta de las mejores olas del país. Perfecto tanto para principiantes como para surfistas experimentados con instructores locales.",
-        "imagen": "assents/img/guanacaste/tamarindo/actividad-nueva-1.jpg"
+        "imagen": "assents/img/guanacaste/tamarindo/surf-tamarindo.png"
       },
       {
         "nombre": "Playa",
@@ -48,10 +48,10 @@
     "descripcion": "Parque nacional con volcanes activos, senderos, cataratas y aguas termales. Ideal para aventura y naturaleza.",
     "imagen_portada": "assents/img/guanacaste/rincon-de-la-vieja/portada.jpg",
     "galeria": [
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-1.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-2.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-3.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-4.jpg"
+      "assents/img/guanacaste/rincon-de-la-vieja/crater-delavieja.jpg",
+      "assents/img/guanacaste/rincon-de-la-vieja/crater.png",
+      "assents/img/guanacaste/rincon-de-la-vieja/parque-delavieja.png",
+      "assents/img/guanacaste/rincon-de-la-vieja/erupcion.png"
     ],
     "audio": "assents/audio/rincondelavieja.mp3",
     "video": "assents/img/guanacaste/rincon-de-la-vieja/video.mp4",
@@ -59,7 +59,7 @@
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-1.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/senderos.png"
       },
       {
         "nombre": "Volcanes",
@@ -69,7 +69,7 @@
       {
         "nombre": "Aguas termales",
         "descripcion": "Relaja tu cuerpo y mente en las cálidas aguas termales de origen mineral, calentadas naturalmente por la actividad volcánica.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-3.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/aguas-termales.png"
       }
     ],
     "direccion": "Parque Nacional Rincón de la Vieja, Liberia, Guanacaste, Costa Rica",
@@ -426,10 +426,10 @@
     "descripcion": "Destino caribeño con playas, cultura afrocaribeña y ambiente relajado.",
     "imagen_portada": "assents/img/limon/puerto-viejo/portada.jpg",
     "galeria": [
-      "assents/img/limon/puerto-viejo/galeria-nueva-1.jpg",
-      "assents/img/limon/puerto-viejo/galeria-nueva-2.jpg",
-      "assents/img/limon/puerto-viejo/galeria-nueva-3.jpg",
-      "assents/img/limon/puerto-viejo/galeria-nueva-4.jpg"
+      "assents/img/limon/puerto-viejo/galeria-bote-viejo.jpg",
+      "assents/img/limon/puerto-viejo/galeria-botes-playa.jpg",
+      "assents/img/limon/puerto-viejo/galeria-aerea.png",
+      "assents/img/limon/puerto-viejo/galeria-palmeras.png"
     ],
     "audio": "assents/audio/puertoviejo.mp3",
     "video": "assents/img/limon/puerto-viejo/video.mp4",
@@ -442,12 +442,12 @@
       {
         "nombre": "Cultura",
         "descripcion": "Conoce la rica identidad costarricense a través de su arte, música, tradiciones populares y la calidez de su gente.",
-        "imagen": "assents/img/limon/puerto-viejo/actividad-nueva-2.jpg"
+        "imagen": "assents/img/limon/puerto-viejo/cultura-puerto-viejo.jpg"
       },
       {
         "nombre": "Surf",
         "descripcion": "Disfruta de las mejores olas del país. Perfecto tanto para principiantes como para surfistas experimentados con instructores locales.",
-        "imagen": "assents/img/limon/puerto-viejo/actividad-nueva-3.jpg"
+        "imagen": "assents/img/limon/puerto-viejo/surf-puerto-viejo.png"
       }
     ],
     "direccion": "Puerto Viejo de Talamanca, Limón, Costa Rica",
