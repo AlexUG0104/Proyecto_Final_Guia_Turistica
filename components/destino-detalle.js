@@ -163,6 +163,14 @@ class DestinoDetalle extends HTMLElement {
         </div>
       </article>
 
+      <!-- Experiencia Mágica Toggle -->
+      <button class="btn-magico" id="btnMagico">
+        Experiencia Mágica ✨
+      </button>
+
+      <!-- Contenedor de Partículas -->
+      <div id="particlesContainer" class="particles-container"></div>
+
       <!-- Lightbox Modal -->
       <div class="lightbox" id="lightboxModal">
         <div class="lightbox-content">
@@ -227,6 +235,70 @@ class DestinoDetalle extends HTMLElement {
 
       lightboxModal.addEventListener("click", () => {
         closeLightbox();
+      });
+    }
+
+    // 3D Tilt Effect for Cards
+    const cards = shadow.querySelectorAll(".actividad-tarjeta, .info-tarjeta, .galeria-item");
+    cards.forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transition = "transform 0.1s ease-out";
+        card.style.zIndex = "10";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+        card.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        card.style.zIndex = "1";
+      });
+    });
+
+    // Magic Mode (Experiencia Mágica)
+    const btnMagico = shadow.getElementById("btnMagico");
+    const particlesContainer = shadow.getElementById("particlesContainer");
+    const article = shadow.querySelector(".detalle");
+    let isMagic = false;
+    let particleInterval;
+
+    if (btnMagico && particlesContainer) {
+      btnMagico.addEventListener("click", () => {
+        isMagic = !isMagic;
+        
+        if (isMagic) {
+          btnMagico.classList.add("active");
+          btnMagico.innerHTML = "Apagar Magia 🌙";
+          article.classList.add("magic-mode");
+          
+          // Generate particles
+          particleInterval = setInterval(() => {
+            const particle = document.createElement("div");
+            particle.classList.add("particle");
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.width = Math.random() * 6 + 2 + "px";
+            particle.style.height = particle.style.width;
+            particle.style.animationDuration = Math.random() * 3 + 2 + "s";
+            particle.style.opacity = Math.random();
+            particlesContainer.appendChild(particle);
+            
+            setTimeout(() => {
+              particle.remove();
+            }, 5000);
+          }, 150);
+
+        } else {
+          btnMagico.classList.remove("active");
+          btnMagico.innerHTML = "Experiencia Mágica ✨";
+          article.classList.remove("magic-mode");
+          clearInterval(particleInterval);
+          particlesContainer.innerHTML = "";
+        }
       });
     }
   }
