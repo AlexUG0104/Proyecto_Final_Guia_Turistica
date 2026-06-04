@@ -342,10 +342,10 @@
     "descripcion": "Volcán activo con paisajes únicos y vistas que en días claros permiten ver ambos océanos.",
     "imagen_portada": "assents/img/cartago/volcan-irazu/portada.jpg",
     "galeria": [
-      "assents/img/cartago/volcan-irazu/volcan irazu 1.jpg",
-      "assents/img/cartago/volcan-irazu/volcan irazu 2.jpg",
-      "assents/img/cartago/volcan-irazu/volcan irazu 3.jpg",
-      "assents/img/cartago/volcan-irazu/volcan irazu 4.jpg"
+      "assents/img/cartago/volcan-irazu/volcan irazu 1.png",
+      "assents/img/cartago/volcan-irazu/volcan irazu 2.png",
+      "assents/img/cartago/volcan-irazu/volcan irazu 3.png",
+      "assents/img/cartago/volcan-irazu/volcan irazu 4.png"
     ],
     "audio": "assents/audio/irazu.mp3",
     "video": "assents/video/cartago/volcan-irazu/video.mp4",
@@ -353,12 +353,12 @@
       {
         "nombre": "Volcán",
         "descripcion": "Admira la imponencia del volcán y sus formaciones geológicas únicas desde miradores estratégicos totalmente seguros.",
-        "imagen": "assents/img/cartago/volcan-irazu/actividad-1.jpg"
+        "imagen": "assents/img/cartago/volcan-irazu/actividad1.png"
       },
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/cartago/volcan-irazu/senderismo irazu.jpg"
+        "imagen": "assents/img/cartago/volcan-irazu/senderismo.png"
       },
       {
         "nombre": "Paisajes",
