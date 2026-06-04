@@ -9,7 +9,7 @@
       "assents/img/guanacaste/tamarindo/galeria-nueva-1.jpg",
       "assents/img/guanacaste/tamarindo/galeria-nueva-2.jpg",
       "assents/img/guanacaste/tamarindo/galeria-nueva-3.jpg",
-      "assents/img/guanacaste/tamarindo/galeria-nueva-4.jpg"
+      "assents/img/guanacaste/tamarindo/letras-tamarindo.png"
     ],
     "audio": "assents/audio/tamarindo.mp3",
     "video": "assents/video/guanacaste/tamarindo/video.mp4",
@@ -17,7 +17,7 @@
       {
         "nombre": "Surf",
         "descripcion": "Disfruta de las mejores olas del país. Perfecto tanto para principiantes como para surfistas experimentados con instructores locales.",
-        "imagen": "assents/img/guanacaste/tamarindo/actividad-nueva-1.jpg"
+        "imagen": "assents/img/guanacaste/tamarindo/surf-tamarindo.png"
       },
       {
         "nombre": "Playa",
@@ -48,10 +48,10 @@
     "descripcion": "Parque nacional con volcanes activos, senderos, cataratas y aguas termales. Ideal para aventura y naturaleza.",
     "imagen_portada": "assents/img/guanacaste/rincon-de-la-vieja/portada.jpg",
     "galeria": [
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-1.jpg",
+      "assents/img/guanacaste/rincon-de-la-vieja/parque-delavieja.png",
       "assents/img/guanacaste/rincon-de-la-vieja/crater.png",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-3.jpg",
-      "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-4.jpg"
+      "assents/img/guanacaste/rincon-de-la-vieja/erupcion.png",
+      "assents/img/guanacaste/rincon-de-la-vieja/crater-delavieja.jpg"
     ],
     "audio": "assents/audio/rincondelavieja.mp3",
     "video": "assents/video/guanacaste/rincon-de-la-vieja/video.mp4",
@@ -59,7 +59,7 @@
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-1.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/senderos.png"
       },
       {
         "nombre": "Volcanes",
@@ -69,7 +69,7 @@
       {
         "nombre": "Aguas termales",
         "descripcion": "Relaja tu cuerpo y mente en las cálidas aguas termales de origen mineral, calentadas naturalmente por la actividad volcánica.",
-        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/actividad-nueva-3.jpg"
+        "imagen": "assents/img/guanacaste/rincon-de-la-vieja/aguas-termales.png"
       }
     ],
     "direccion": "Parque Nacional Rincón de la Vieja, Liberia, Guanacaste, Costa Rica",
