@@ -172,12 +172,12 @@
     "nombre": "Barva",
     "region": "Heredia",
     "descripcion": "Zona montañosa cercana al Parque Nacional Braulio Carrillo, ideal para caminatas y naturaleza.",
-    "imagen_portada": "assents/img/heredia/barva/portada.jpg",
+    "imagen_portada": "assents/img/heredia/barva/portada.png",
     "galeria": [
-      "assents/img/heredia/barva/portada.jpg",
-      "assents/img/heredia/barva/galeria-1.jpg",
-      "assents/img/heredia/barva/galeria-2.jpg",
-      "assents/img/heredia/barva/galeria-3.jpg"
+      "assents/img/heredia/barva/portada.png",
+      "assents/img/heredia/barva/galeria-1.png",
+      "assents/img/heredia/barva/galeria-2.png",
+      "assents/img/heredia/barva/galeria-3.png"
     ],
     "audio": "assents/audio/barva.mp3",
     "video": "assents/video/heredia/barva/video.mp4",
@@ -185,17 +185,17 @@
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/heredia/barva/actividad-1.jpg"
+        "imagen": "assents/img/heredia/barva/actividad-1.png"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/heredia/barva/actividad-2.jpg"
+        "imagen": "assents/img/heredia/barva/actividad-2.png"
       },
       {
         "nombre": "Montaña",
         "descripcion": "Respira aire puro y fresco en las zonas altas, rodeado de bosques de neblina y hermosos paisajes montañosos.",
-        "imagen": "assents/img/heredia/barva/actividad-3.jpg"
+        "imagen": "assents/img/heredia/barva/actividad-3.png"
       }
     ],
     "direccion": "Volcán Barva, Heredia, Costa Rica",
@@ -217,9 +217,9 @@
     "imagen_portada": "assents/img/heredia/sarapiqui/portada.webp",
     "galeria": [
       "assents/img/heredia/sarapiqui/portada.webp",
-      "assents/img/heredia/sarapiqui/galeria-1.webp",
+      "assents/img/heredia/sarapiqui/galeria-1.jpg",
       "assents/img/heredia/sarapiqui/galeria-2.webp",
-      "assents/img/heredia/sarapiqui/galeria-3.webp"
+      "assents/img/heredia/sarapiqui/galeria-3.jpg"
     ],
     "audio": "assents/audio/sarapiqui.mp3",
     "video": "assents/video/heredia/sarapiqui/video.mp4",
@@ -227,17 +227,17 @@
       {
         "nombre": "Rafting",
         "descripcion": "Desciende por emocionante rápidos de aguas cristalinas rodeados de exuberante vegetación y cañones naturales.",
-        "imagen": "assents/img/heredia/sarapiqui/actividad-1.webp"
+        "imagen": "assents/img/heredia/sarapiqui/actividad-1.jpg"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/heredia/sarapiqui/actividad-2.webp"
+        "imagen": "assents/img/heredia/sarapiqui/actividad-2.jpg"
       },
       {
         "nombre": "Aves",
         "descripcion": "Observa una increíble variedad de aves exóticas y coloridas en su hábitat natural con la ayuda de guías especializados.",
-        "imagen": "assents/img/heredia/sarapiqui/actividad-3.webp"
+        "imagen": "assents/img/heredia/sarapiqui/actividad-3.jpg"
       }
     ],
     "direccion": "Puerto Viejo de Sarapiquí, Heredia, Costa Rica",
