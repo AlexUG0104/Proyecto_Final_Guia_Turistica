@@ -33,19 +33,6 @@ Podés ver la aplicación funcionando aquí:
 
 ---
 
-## 🎨 Wireframes / Diseño
-
-### Página principal
-![Home](CapReadme/Principal.png)
-
-### Página de provincia
-![Provincia](CapReadme/GuancaProvincia.png)
-
-### Página de destino
-![Destino](CapReadme/Destino.png)
-
----
-
 ## 🧩 Web Components
 
 ### `<mapa-costa-rica>`
