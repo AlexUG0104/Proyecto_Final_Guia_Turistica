@@ -487,3 +487,91 @@ audio-guia {
     justify-content: center;
   }
 }
+
+/* --- Experiencia Mágica --- */
+.btn-magico {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #082f25;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255, 165, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-magico:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 165, 0, 0.6);
+}
+
+.btn-magico.active {
+  background: linear-gradient(135deg, #1A1A2E, #16213E);
+  color: #E94560;
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+/* Magic Mode on .detalle */
+.detalle {
+  transition: all 0.8s ease;
+}
+
+.magic-mode {
+  background: rgba(10, 10, 20, 0.9);
+  border-color: rgba(255, 215, 0, 0.3);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.1);
+  color: #fff;
+}
+
+.magic-mode h1, .magic-mode .seccion-titulo, .magic-mode .actividad-tarjeta-body h3, .magic-mode .info-tarjeta h3 {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.magic-mode .descripcion, .magic-mode p, .magic-mode .region {
+  color: #e0e0e0;
+}
+
+.magic-mode .actividad-tarjeta, .magic-mode .info-tarjeta {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.magic-mode .actividad-tarjeta-body, .magic-mode .info-tarjeta p {
+  color: #ccc;
+}
+
+/* Particles Container */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  background: radial-gradient(circle, #FFD700, transparent);
+  border-radius: 50%;
+  animation: floatUp linear forwards;
+  filter: blur(1px);
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(0); opacity: 0; }
+}

@@ -384,10 +384,10 @@
     "descripcion": "Zona rural tranquila rodeada de montañas, cafetales y ríos, perfecta para relajarse.",
     "imagen_portada": "assents/img/cartago/valle-de-orosi/portada.jpg",
     "galeria": [
-      "assents/img/cartago/valle-de-orosi/portada.jpg",
-      "assents/img/cartago/valle-de-orosi/galeria-1.jpg",
-      "assents/img/cartago/valle-de-orosi/galeria-2.jpg",
-      "assents/img/cartago/valle-de-orosi/galeria-3.jpg"
+      "assents/img/cartago/valle-de-orosi/galeria valle ororsi1.jpg",
+      "assents/img/cartago/valle-de-orosi/galeria valle ororsi2.jpg",
+      "assents/img/cartago/valle-de-orosi/galeria valle ororsi3.jpg",
+      "assents/img/cartago/valle-de-orosi/galeria valle ororsi4.jpg"
     ],
     "audio": "assents/audio/valleorosi.mp3",
     "video": "assents/video/cartago/valle-de-orosi/video.mp4",
@@ -395,12 +395,12 @@
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/cartago/valle-de-orosi/actividad-1.jpg"
+        "imagen": "assents/img/cartago/valle-de-orosi/naturaleza valle orosi.jpg"
       },
       {
         "nombre": "Café",
         "descripcion": "Aprende sobre el proceso de cultivo, recolección y tostado del grano de oro en un tour interactivo con degustación premium.",
-        "imagen": "assents/img/cartago/valle-de-orosi/actividad-2.jpg"
+        "imagen": "assents/img/cartago/valle-de-orosi/cafe orosi.jpg"
       },
       {
         "nombre": "Relajación",
