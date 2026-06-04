@@ -88,9 +88,9 @@
     "nombre": "Volcán Poás",
     "region": "Alajuela",
     "descripcion": "Uno de los volcanes más visitados del país, famoso por su cráter activo y senderos accesibles.",
-    "imagen_portada": "assents/img/alajuela/volcan-poas/volcan alajuela.jpg",
+    "imagen_portada": "assents/img/alajuela/volcan-poas/portada.webp",
     "galeria": [
-      "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 1.jpg",
+      "assents/img/alajuela/volcan-poas/portada.webp",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 2.jpg",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 3.jpg",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 4.jpg"
@@ -111,7 +111,7 @@
       {
         "nombre": "Miradores",
         "descripcion": "Disfruta de vistas panorámicas impresionantes que te permitirán capturar fotos memorables del paisaje costarricense.",
-        "imagen": "assents/img/alajuela/volcan-poas/mirador alajuela.jpg"
+        "imagen": "assents/img/alajuela/volcan-poas/mirador.jpg"
       }
     ],
     "direccion": "Parque Nacional Volcán Poás, Alajuela, Costa Rica",
