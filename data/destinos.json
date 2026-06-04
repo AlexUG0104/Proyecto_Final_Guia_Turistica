@@ -510,10 +510,10 @@
     "descripcion": "Parque nacional con playas paradisíacas y abundante vida silvestre.",
     "imagen_portada": "assents/img/puntarenas/manuel-antonio/portada.jpg",
     "galeria": [
-      "assents/img/puntarenas/manuel-antonio/galeria-nueva-1.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-nueva-2.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-nueva-3.jpg",
-      "assents/img/puntarenas/manuel-antonio/galeria-nueva-4.jpg"
+      "assents/img/puntarenas/manuel-antonio/galeria-rotulo.jpg",
+      "assents/img/puntarenas/manuel-antonio/galeria-sendero.jpg",
+      "assents/img/puntarenas/manuel-antonio/galeria-playa.jpg",
+      "assents/img/puntarenas/manuel-antonio/galeria-rocas.png"
     ],
     "audio": "assents/audio/manuelantonio.mp3",
     "video": "assents/video/puntarenas/manuel-antonio/video.mp4",
@@ -521,17 +521,17 @@
       {
         "nombre": "Playa",
         "descripcion": "Relájate en la suave arena, toma el sol, báñate en sus cálidas aguas o realiza una caminata por la costa rodeado de naturaleza.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-nueva-1.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/playa-manuel-antonio.jpg"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-nueva-2.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/naturaleza-manuel-antonio.jpg"
       },
       {
         "nombre": "Animales",
         "descripcion": "Encuentra monos, perezosos, iguanas y coatíes en su entorno natural a solo unos pasos del sendero principal.",
-        "imagen": "assents/img/puntarenas/manuel-antonio/actividad-nueva-3.jpg"
+        "imagen": "assents/img/puntarenas/manuel-antonio/mono-capuchino.jpg"
       }
     ],
     "direccion": "Parque Nacional Manuel Antonio, Quepos, Puntarenas, Costa Rica",
@@ -552,10 +552,10 @@
     "descripcion": "Famosa por el Parque Nacional Marino Ballena y su formación natural en forma de cola de ballena.",
     "imagen_portada": "assents/img/puntarenas/uvita/portada.jpg",
     "galeria": [
-      "assents/img/puntarenas/uvita/galeria-nueva-1.jpg",
-      "assents/img/puntarenas/uvita/galeria-nueva-2.jpg",
-      "assents/img/puntarenas/uvita/galeria-nueva-3.jpg",
-      "assents/img/puntarenas/uvita/galeria-nueva-4.jpg"
+      "assents/img/puntarenas/uvita/uvita1.png",
+      "assents/img/puntarenas/uvita/uvita2.png",
+      "assents/img/puntarenas/uvita/uvita3.png",
+      "assents/img/puntarenas/uvita/galeria-nueva-1.jpg"
     ],
     "audio": "assents/audio/uvita.mp3",
     "video": "assents/video/puntarenas/uvita/video.mp4",
@@ -568,12 +568,12 @@
       {
         "nombre": "Ballenas",
         "descripcion": "Vive la emocionante experiencia de observar el paso de majestuosas ballenas jorobadas y delfines en el océano Pacífico.",
-        "imagen": "assents/img/puntarenas/uvita/actividad-nueva-2.jpg"
+        "imagen": "assents/img/puntarenas/uvita/ballena.png"
       },
       {
         "nombre": "Naturaleza",
         "descripcion": "Sumérgete en la asombrosa biodiversidad del bosque tropical húmedo y admira especies vegetales y animales únicas.",
-        "imagen": "assents/img/puntarenas/uvita/actividad-nueva-3.jpg"
+        "imagen": "assents/img/puntarenas/uvita/naturaleza.png"
       }
     ],
     "direccion": "Uvita, Osa, Puntarenas, Costa Rica",
