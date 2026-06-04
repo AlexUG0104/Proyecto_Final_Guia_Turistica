@@ -133,9 +133,9 @@
     "imagen_portada": "assents/img/alajuela/la-fortuna/portada.png",
     "galeria": [
       "assents/img/alajuela/la-fortuna/portada.png",
-      "assents/img/alajuela/la-fortuna/galeria-1.jpg",
+      "assents/img/alajuela/la-fortuna/galeria-1.png",
       "assents/img/alajuela/la-fortuna/galeria-2.png",
-      "assents/img/alajuela/la-fortuna/galeria-3.png"
+      "assents/img/alajuela/la-fortuna/galeria-3.jpg"
     ],
     "audio": "assents/audio/lafortuna.mp3",
     "video": "assents/video/alajuela/la-fortuna/video.mp4",
@@ -143,17 +143,17 @@
       {
         "nombre": "Aguas termales",
         "descripcion": "Relaja tu cuerpo y mente en las cálidas aguas termales de origen mineral, calentadas naturalmente por la actividad volcánica.",
-        "imagen": "assents/img/alajuela/la-fortuna/actividad-1.png"
+        "imagen": "assents/img/alajuela/la-fortuna/actividad1.png"
       },
       {
         "nombre": "Volcán",
         "descripcion": "Admira la imponencia del volcán y sus formaciones geológicas únicas desde miradores estratégicos totalmente seguros.",
-        "imagen": "assents/img/alajuela/la-fortuna/actividad-2.png"
+        "imagen": "assents/img/alajuela/la-fortuna/actividad2.png"
       },
       {
         "nombre": "Aventura",
         "descripcion": "Siente la adrenalina al máximo con actividades de aventura como canopy, puentes colgantes, rappel y exploración activa.",
-        "imagen": "assents/img/alajuela/la-fortuna/actividad-3.png"
+        "imagen": "assents/img/alajuela/la-fortuna/actividad3.png"
       }
     ],
     "direccion": "La Fortuna, San Carlos, Alajuela, Costa Rica",
