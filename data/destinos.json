@@ -88,9 +88,9 @@
     "nombre": "Volcán Poás",
     "region": "Alajuela",
     "descripcion": "Uno de los volcanes más visitados del país, famoso por su cráter activo y senderos accesibles.",
-    "imagen_portada": "assents/img/alajuela/volcan-poas/volcan alajuela.jpg",
+    "imagen_portada": "assents/img/alajuela/volcan-poas/portada.webp",
     "galeria": [
-      "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 1.jpg",
+      "assents/img/alajuela/volcan-poas/portada.webp",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 2.jpg",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 3.jpg",
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 4.jpg"
@@ -111,7 +111,7 @@
       {
         "nombre": "Miradores",
         "descripcion": "Disfruta de vistas panorámicas impresionantes que te permitirán capturar fotos memorables del paisaje costarricense.",
-        "imagen": "assents/img/alajuela/volcan-poas/mirador alajuela.jpg"
+        "imagen": "assents/img/alajuela/volcan-poas/mirador.jpg"
       }
     ],
     "direccion": "Parque Nacional Volcán Poás, Alajuela, Costa Rica",
@@ -135,7 +135,7 @@
       "assents/img/alajuela/la-fortuna/la fortuna 1.jpg",
       "assents/img/alajuela/la-fortuna/la fortuna 2.jpg",
       "assents/img/alajuela/la-fortuna/la fortuna 3.jpg",
-      "assents/img/alajuela/la-fortuna/galeria-1.jpg"
+      "assents/img/alajuela/la-fortuna/portada.png"
     ],
     "audio": "assents/audio/lafortuna.mp3",
     "video": "assents/video/alajuela/la-fortuna/video.mp4",
@@ -148,12 +148,12 @@
       {
         "nombre": "Volcán",
         "descripcion": "Admira la imponencia del volcán y sus formaciones geológicas únicas desde miradores estratégicos totalmente seguros.",
-        "imagen": "assents/img/alajuela/la-fortuna/actividad-2.png"
+        "imagen": "assents/img/alajuela/la-fortuna/galeria-1.png"
       },
       {
         "nombre": "Aventura",
         "descripcion": "Siente la adrenalina al máximo con actividades de aventura como canopy, puentes colgantes, rappel y exploración activa.",
-        "imagen": "assents/img/alajuela/la-fortuna/aventura fortuna.jpg"
+        "imagen": "assents/img/alajuela/la-fortuna/actividad3.png"
       }
     ],
     "direccion": "La Fortuna, San Carlos, Alajuela, Costa Rica",
