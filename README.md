@@ -117,7 +117,7 @@ Ejemplo implementado:
   "imagen_portada": "assents/img/PuntoTamarindo.jpg",
   "galeria": [],
   "audio": "assents/audio/tamarindo.mp3",
-  "video": "assents/video/Tamarindo.mp4",
+  "video": "assents/video/guanacaste/tamarindo/video.mp4",
   "actividades": ["Surf", "Playa"],
   "lat": 10.2993,
   "lng": -85.8400,

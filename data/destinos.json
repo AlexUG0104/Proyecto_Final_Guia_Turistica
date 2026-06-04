@@ -12,7 +12,7 @@
       "assents/img/guanacaste/tamarindo/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/tamarindo.mp3",
-    "video": "assents/img/guanacaste/tamarindo/video.mp4",
+    "video": "assents/video/guanacaste/tamarindo/video.mp4",
     "actividades": [
       {
         "nombre": "Surf",
@@ -54,7 +54,7 @@
       "assents/img/guanacaste/rincon-de-la-vieja/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/rincondelavieja.mp3",
-    "video": "assents/img/guanacaste/rincon-de-la-vieja/video.mp4",
+    "video": "assents/video/guanacaste/rincon-de-la-vieja/video.mp4",
     "actividades": [
       {
         "nombre": "Senderismo",
@@ -96,7 +96,7 @@
       "assents/img/alajuela/volcan-poas/galeria de imagenes alajuela 4.jpg"
     ],
     "audio": "assents/audio/volcanpoas.mp3",
-    "video": "assents/img/alajuela/volcan-poas/video.mp4",
+    "video": "assents/video/alajuela/volcan-poas/video.mp4",
     "actividades": [
       {
         "nombre": "Volcán",
@@ -138,7 +138,7 @@
       "assents/img/alajuela/la-fortuna/galeria-3.png"
     ],
     "audio": "assents/audio/lafortuna.mp3",
-    "video": "assents/img/alajuela/la-fortuna/video.mp4",
+    "video": "assents/video/alajuela/la-fortuna/video.mp4",
     "actividades": [
       {
         "nombre": "Aguas termales",
@@ -180,7 +180,7 @@
       "assents/img/heredia/barva/galeria-3.jpg"
     ],
     "audio": "assents/audio/barva.mp3",
-    "video": "assents/img/heredia/barva/video.mp4",
+    "video": "assents/video/heredia/barva/video.mp4",
     "actividades": [
       {
         "nombre": "Senderismo",
@@ -222,7 +222,7 @@
       "assents/img/heredia/sarapiqui/galeria-3.webp"
     ],
     "audio": "assents/audio/sarapiqui.mp3",
-    "video": "assents/img/heredia/sarapiqui/video.mp4",
+    "video": "assents/video/heredia/sarapiqui/video.mp4",
     "actividades": [
       {
         "nombre": "Rafting",
@@ -264,7 +264,7 @@
       "assents/img/san-jose/teatro-nacional/galeria-3.jpg"
     ],
     "audio": "assents/audio/teatro.mp3",
-    "video": "assents/img/san-jose/teatro-nacional/video.mp4",
+    "video": "assents/video/san-jose/teatro-nacional/video.mp4",
     "actividades": [
       {
         "nombre": "Cultura",
@@ -306,7 +306,7 @@
       "assents/img/san-jose/cerro-chirripo/galeria-3.webp"
     ],
     "audio": "assents/audio/chirripo.mp3",
-    "video": "assents/img/san-jose/cerro-chirripo/video.mp4",
+    "video": "assents/video/san-jose/cerro-chirripo/video.mp4",
     "actividades": [
       {
         "nombre": "Senderismo",
@@ -348,7 +348,7 @@
       "assents/img/cartago/volcan-irazu/galeria-3.jpg"
     ],
     "audio": "assents/audio/irazu.mp3",
-    "video": "assents/img/cartago/volcan-irazu/video.mp4",
+    "video": "assents/video/cartago/volcan-irazu/video.mp4",
     "actividades": [
       {
         "nombre": "Volcán",
@@ -390,7 +390,7 @@
       "assents/img/cartago/valle-de-orosi/galeria-3.jpg"
     ],
     "audio": "assents/audio/valleorosi.mp3",
-    "video": "assents/img/cartago/valle-de-orosi/video.mp4",
+    "video": "assents/video/cartago/valle-de-orosi/video.mp4",
     "actividades": [
       {
         "nombre": "Naturaleza",
@@ -432,7 +432,7 @@
       "assents/img/limon/puerto-viejo/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/puertoviejo.mp3",
-    "video": "assents/img/limon/puerto-viejo/video.mp4",
+    "video": "assents/video/limon/puerto-viejo/video.mp4",
     "actividades": [
       {
         "nombre": "Playa",
@@ -474,7 +474,7 @@
       "assents/img/limon/cahuita/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/cahuita.mp3",
-    "video": "assents/img/limon/cahuita/video.mp4",
+    "video": "assents/video/limon/cahuita/video.mp4",
     "actividades": [
       {
         "nombre": "Snorkel",
@@ -516,7 +516,7 @@
       "assents/img/puntarenas/manuel-antonio/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/manuelantonio.mp3",
-    "video": "assents/img/puntarenas/manuel-antonio/video.mp4",
+    "video": "assents/video/puntarenas/manuel-antonio/video.mp4",
     "actividades": [
       {
         "nombre": "Playa",
@@ -558,7 +558,7 @@
       "assents/img/puntarenas/uvita/galeria-nueva-4.jpg"
     ],
     "audio": "assents/audio/uvita.mp3",
-    "video": "assents/img/puntarenas/uvita/video.mp4",
+    "video": "assents/video/puntarenas/uvita/video.mp4",
     "actividades": [
       {
         "nombre": "Playa",
