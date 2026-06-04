@@ -256,12 +256,12 @@
     "nombre": "Teatro Nacional",
     "region": "San José",
     "descripcion": "Edificio histórico en el centro de San José, símbolo cultural con arquitectura impresionante.",
-    "imagen_portada": "assents/img/san-jose/teatro-nacional/portada.jpg",
+    "imagen_portada": "assents/img/san-jose/teatro-nacional/portada.png",
     "galeria": [
-      "assents/img/san-jose/teatro-nacional/portada.jpg",
-      "assents/img/san-jose/teatro-nacional/galeria-1.jpg",
-      "assents/img/san-jose/teatro-nacional/galeria-2.jpg",
-      "assents/img/san-jose/teatro-nacional/galeria-3.jpg"
+      "assents/img/san-jose/teatro-nacional/portada.png",
+      "assents/img/san-jose/teatro-nacional/galeria-1.png",
+      "assents/img/san-jose/teatro-nacional/galeria-2.png",
+      "assents/img/san-jose/teatro-nacional/galeria-3.png"
     ],
     "audio": "assents/audio/teatro.mp3",
     "video": "assents/video/san-jose/teatro-nacional/video.mp4",
@@ -269,17 +269,17 @@
       {
         "nombre": "Cultura",
         "descripcion": "Conoce la rica identidad costarricense a través de su arte, música, tradiciones populares y la calidez de su gente.",
-        "imagen": "assents/img/san-jose/teatro-nacional/actividad-1.jpg"
+        "imagen": "assents/img/san-jose/teatro-nacional/actividad-1.png "
       },
       {
         "nombre": "Historia",
         "descripcion": "Descubre el pasado de Costa Rica y los eventos históricos clave que dieron forma al país libre y democrático de hoy.",
-        "imagen": "assents/img/san-jose/teatro-nacional/actividad-2.jpg"
+        "imagen": "assents/img/san-jose/teatro-nacional/actividad-2.png"
       },
       {
         "nombre": "Arquitectura",
         "descripcion": "Admira las hermosas construcciones clásicas con detalles finos y una historia fascinante plasmada en cada rincón.",
-        "imagen": "assents/img/san-jose/teatro-nacional/actividad-3.jpg"
+        "imagen": "assents/img/san-jose/teatro-nacional/actividad-3.png"
       }
     ],
     "direccion": "Avenida 2, San José, Costa Rica",
@@ -298,11 +298,11 @@
     "nombre": "Cerro Chirripó",
     "region": "San José",
     "descripcion": "El punto más alto de Costa Rica, ideal para senderismo extremo y vistas panorámicas.",
-    "imagen_portada": "assents/img/san-jose/cerro-chirripo/portada.webp",
+    "imagen_portada": "assents/img/san-jose/cerro-chirripo/portada.jpg",
     "galeria": [
-      "assents/img/san-jose/cerro-chirripo/portada.webp",
-      "assents/img/san-jose/cerro-chirripo/galeria-1.webp",
-      "assents/img/san-jose/cerro-chirripo/galeria-2.webp",
+      "assents/img/san-jose/cerro-chirripo/portada.jpg",
+      "assents/img/san-jose/cerro-chirripo/galeria-1.jpg",
+      "assents/img/san-jose/cerro-chirripo/galeria-2.jpg",
       "assents/img/san-jose/cerro-chirripo/galeria-3.webp"
     ],
     "audio": "assents/audio/chirripo.mp3",
@@ -311,17 +311,17 @@
       {
         "nombre": "Senderismo",
         "descripcion": "Explora senderos naturales rodeados de flora y fauna exótica, ideales para conectar con la naturaleza y hacer ejercicio.",
-        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-1.webp"
+        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-1.png"
       },
       {
         "nombre": "Montaña",
         "descripcion": "Respira aire puro y fresco en las zonas altas, rodeado de bosques de neblina y hermosos paisajes montañosos.",
-        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-2.webp"
+        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-2.png"
       },
       {
         "nombre": "Aventura",
         "descripcion": "Siente la adrenalina al máximo con actividades de aventura como canopy, puentes colgantes, rappel y exploración activa.",
-        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-3.webp"
+        "imagen": "assents/img/san-jose/cerro-chirripo/actividad-3.avif"
       }
     ],
     "direccion": "Parque Nacional Chirripó, Pérez Zeledón, San José, Costa Rica",
