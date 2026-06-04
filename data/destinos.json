@@ -382,7 +382,7 @@
     "nombre": "Valle de Orosi",
     "region": "Cartago",
     "descripcion": "Zona rural tranquila rodeada de montañas, cafetales y ríos, perfecta para relajarse.",
-    "imagen_portada": "assents/img/cartago/valle-de-orosi/portada.jpg",
+    "imagen_portada": "assents/img/cartago/valle-de-orosi/portada.png",
     "galeria": [
       "assents/img/cartago/valle-de-orosi/galeria valle ororsi1.jpg",
       "assents/img/cartago/valle-de-orosi/galeria valle ororsi2.jpg",
@@ -405,7 +405,7 @@
       {
         "nombre": "Relajación",
         "descripcion": "Desconéctate del bullicio diario y recarga energías en un ambiente pacífico rodeado de paz y paisajes relajantes.",
-        "imagen": "assents/img/cartago/valle-de-orosi/actividad-3.jpg"
+        "imagen": "assents/img/cartago/valle-de-orosi/relajacion.png"
       }
     ],
     "direccion": "Orosi, Paraíso, Cartago, Costa Rica",
