@@ -57,7 +57,7 @@ class MapaProvincia extends HTMLElement {
         data-id="${destino.id}"
         style="top: ${destino.mapTop}%; left: ${destino.mapLeft}%"
         aria-label="${destino.nombre}">
-        ${destino.nombre}
+        <span class="tooltip">${destino.nombre}</span>
       </button>
     `).join("");
 
@@ -111,10 +111,37 @@ class MapaProvincia extends HTMLElement {
       window.location.href = `../destino/?id=${encodeURIComponent(id)}&region=${encodeURIComponent(this.region)}`;
     };
 
+    const isTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
+
     puntos.forEach(punto => {
-      punto.addEventListener("click", () => {
-        irADestino(punto.dataset.id);
-      });
+      if (isTouchDevice()) {
+        // On mobile: first tap shows tooltip, second tap navigates
+        punto.addEventListener("click", (e) => {
+          const yaActivo = punto.classList.contains("activo");
+
+          // Close all other active tooltips
+          puntos.forEach(p => p.classList.remove("activo"));
+
+          if (yaActivo) {
+            // Second tap — navigate
+            irADestino(punto.dataset.id);
+          } else {
+            // First tap — show tooltip
+            e.preventDefault();
+            punto.classList.add("activo");
+
+            // Auto-hide tooltip after 2.5s if user doesn't tap again
+            setTimeout(() => {
+              punto.classList.remove("activo");
+            }, 2500);
+          }
+        });
+      } else {
+        // On desktop: direct click navigates
+        punto.addEventListener("click", () => {
+          irADestino(punto.dataset.id);
+        });
+      }
     });
 
     tarjetas.forEach(tarjeta => {

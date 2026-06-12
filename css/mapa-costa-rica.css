@@ -25,39 +25,33 @@
 
 .zona {
   position: absolute;
-  background: var(--card-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--card-border);
-  padding: 0.4rem 0.9rem;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
-  color: var(--text);
-  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
+  /* Invisible overlay — the province name already appears in the map image */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: transparent;
+  font-size: 0;
   cursor: pointer;
   transform: translate(-50%, -50%);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 10;
-  white-space: nowrap;
-  border-style: solid;
-  text-align: center;
+  /* Large touch target covering each province area */
+  width: 80px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.zona:focus,
-.zona:active {
+.zona:focus {
   outline: none;
-  border: none;
 }
 
-.zona:hover {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
-  transform: translate(-50%, -50%) scale(1.08) translateY(-2px);
-  box-shadow: var(--shadow-md);
-  z-index: 20;
+.zona:hover,
+.zona:active {
+  /* Subtle highlight on hover so user knows it's clickable */
+  background: rgba(255, 165, 0, 0.25);
+  border-radius: var(--radius-sm);
 }
 
 .guanacaste {
@@ -95,8 +89,9 @@
   left: 72%;
 }
 
+/* Mobile grid hidden — users tap directly on the map */
 .provincias-grid-mobile {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 900px) {
@@ -106,21 +101,9 @@
 }
 
 @media (max-width: 768px) {
-  /* Keep map labels visible and touchable on mobile */
+  /* Bigger tap areas on mobile */
   .zona {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    min-width: 48px;
-    min-height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Larger tap target */
-    touch-action: manipulation;
-  }
-
-  /* Hide the button grid — user interacts directly with the map */
-  .provincias-grid-mobile {
-    display: none;
+    width: 70px;
+    height: 45px;
   }
 }
