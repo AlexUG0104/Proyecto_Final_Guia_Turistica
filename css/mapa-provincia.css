@@ -1,90 +1,113 @@
 .contenedor {
   text-align: center;
+  animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #1b4332;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--primary);
   margin-bottom: 0.5rem;
+  font-family: 'DM Serif Display', Georgia, serif;
 }
 
 p {
-  color: #344e41;
-  margin-bottom: 2rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
 }
 
 .card {
   position: relative;
   width: min(900px, 95%);
   margin: 0 auto;
-  background: white;
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-xl);
 }
 
 .mapa {
   position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 img {
   width: 100%;
   display: block;
-  border-radius: 15px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
 }
 
 .punto-turistico {
   position: absolute;
   transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 3px solid white;
-  background: #e63946;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--card-border);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  border-style: solid;
+  text-align: center;
 }
 
 .punto-turistico:hover {
-  transform: translate(-50%, -50%) scale(1.25);
-  background: #ffba08;
-}
-
-.punto-turistico span {
-  position: absolute;
-  left: 50%;
-  top: 130%;
-  transform: translateX(-50%);
-  background: #1b4332;
+  background: var(--accent);
   color: white;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  white-space: nowrap;
+  border-color: var(--accent);
+  transform: translate(-50%, -50%) scale(1.08) translateY(-2px);
+  box-shadow: var(--shadow-md);
+  z-index: 20;
 }
 
 .lista {
-  margin: 1.5rem auto 0;
-  width: min(900px, 95%);
+  margin: 3.5rem auto 0;
+  width: min(1000px, 95%);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
 }
 
+/* Destination card styling */
 .destino {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--card-border);
   text-align: left;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .destino:hover,
 .destino:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.14);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(45, 106, 79, 0.3);
   outline: none;
 }
 
@@ -92,6 +115,18 @@ img {
   width: 100%;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  position: relative;
+}
+
+.destino-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(15, 61, 42, 0.1), transparent);
+  pointer-events: none;
 }
 
 .destino-img img {
@@ -99,45 +134,87 @@ img {
   height: 100%;
   border-radius: 0;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: var(--transition-slow);
 }
 
 .destino:hover .destino-img img,
 .destino:focus-visible .destino-img img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .destino-body {
-  padding: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .destino h3 {
-  margin: 0 0 0.4rem;
-  color: #1b4332;
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.45rem;
+  transition: var(--transition);
 }
 
-.destino p {
-  margin: 0;
+.destino:hover h3 {
+  color: var(--secondary);
+}
+
+.destino-meta {
+  margin-bottom: 1rem;
+}
+
+.destino-region {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Activity Badges */
+.destino-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.destino-tag {
+  background: rgba(45, 106, 79, 0.08);
+  border: 1px solid rgba(45, 106, 79, 0.12);
+  color: var(--secondary);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.destino:hover .destino-tag {
+  background: var(--primary-light);
+  border-color: rgba(45, 106, 79, 0.2);
 }
 
 @media (max-width: 900px) {
   .card {
-    padding: 0.9rem;
+    padding: 1rem;
+  }
+  .lista {
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 600px) {
   .card {
-    border-radius: 16px;
+    border-radius: var(--radius-md);
   }
 
   .punto-turistico {
-    width: 18px;
-    height: 18px;
+    display: none;
   }
-
-  .punto-turistico span {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.45rem;
+  
+  .lista {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
   }
 }

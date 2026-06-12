@@ -33,6 +33,24 @@ class DestinoDetalle extends HTMLElement {
       || this.destino.imagen_portada;
   }
 
+  obtenerClima(id) {
+    const climas = {
+      'alajuela-001': { temp: '24°C', estado: 'Nublado ⛅', humedad: '80%', viento: '12 km/h' },
+      'alajuela-002': { temp: '28°C', estado: 'Húmedo / Lluvia Tropical 🌦️', humedad: '88%', viento: '8 km/h' },
+      'heredia-001': { temp: '16°C', estado: 'Neblina 🌫️', humedad: '90%', viento: '15 km/h' },
+      'heredia-002': { temp: '26°C', estado: 'Brilloso / Lluvia 🌧️', humedad: '85%', viento: '10 km/h' },
+      'sanjose-001': { temp: '22°C', estado: 'Templado / Despejado ☀️', humedad: '65%', viento: '14 km/h' },
+      'sanjose-002': { temp: '10°C', estado: 'Frío / Nublado 🍃', humedad: '75%', viento: '28 km/h' },
+      'cartago-001': { temp: '14°C', estado: 'Fresco / Neblina 🌫️', humedad: '82%', viento: '20 km/h' },
+      'cartago-002': { temp: '23°C', estado: 'Agradable 🍃', humedad: '70%', viento: '11 km/h' },
+      'limon-001': { temp: '30°C', estado: 'Cálido / Soleado ☀️', humedad: '82%', viento: '12 km/h' },
+      'limon-002': { temp: '29°C', estado: 'Tropical Húmedo ⛅', humedad: '85%', viento: '9 km/h' },
+      'puntarenas-001': { temp: '31°C', estado: 'Soleado Playero ☀️', humedad: '75%', viento: '15 km/h' },
+      'puntarenas-002': { temp: '30°C', estado: 'Soleado / Brisa Marina 🌊', humedad: '78%', viento: '18 km/h' }
+    };
+    return climas[id] || { temp: '25°C', estado: 'Tropical ⛅', humedad: '78%', viento: '12 km/h' };
+  }
+
   notificarDestinoCargado() {
     this.dispatchEvent(new CustomEvent("destino-cargado", {
       detail: { destino: this.destino },
@@ -106,28 +124,40 @@ class DestinoDetalle extends HTMLElement {
           ` : ''}
 
           <!-- Información Práctica -->
-          ${this.destino.mas_informacion ? `
-            <section class="info-seccion">
-              <h2 class="seccion-titulo">Información Práctica</h2>
-              <div class="info-grid">
-                <article class="info-tarjeta">
-                  <span class="info-icono">⏰</span>
-                  <h3>Horario de Visita</h3>
-                  <p>${this.destino.mas_informacion.horario || 'Abierto todos los días.'}</p>
-                </article>
-                <article class="info-tarjeta">
-                  <span class="info-icono">💡</span>
-                  <h3>Consejos de Viaje</h3>
-                  <p>${this.destino.mas_informacion.consejos || 'Llevar ropa cómoda y agua.'}</p>
-                </article>
-                <article class="info-tarjeta">
-                  <span class="info-icono">🗓️</span>
-                  <h3>Mejor Época</h3>
-                  <p>${this.destino.mas_informacion.mejor_epoca || 'Todo el año.'}</p>
-                </article>
-              </div>
-            </section>
-          ` : ''}
+          ${this.destino.mas_informacion ? (() => {
+            const clima = this.obtenerClima(this.destino.id);
+            return `
+              <section class="info-seccion">
+                <h2 class="seccion-titulo">Información Práctica</h2>
+                <div class="info-grid">
+                  <article class="info-tarjeta">
+                    <span class="info-icono">⏰</span>
+                    <h3>Horario de Visita</h3>
+                    <p>${this.destino.mas_informacion.horario || 'Abierto todos los días.'}</p>
+                  </article>
+                  <article class="info-tarjeta">
+                    <span class="info-icono">💡</span>
+                    <h3>Consejos de Viaje</h3>
+                    <p>${this.destino.mas_informacion.consejos || 'Llevar ropa cómoda y agua.'}</p>
+                  </article>
+                  <article class="info-tarjeta">
+                    <span class="info-icono">🗓️</span>
+                    <h3>Mejor Época</h3>
+                    <p>${this.destino.mas_informacion.mejor_epoca || 'Todo el año.'}</p>
+                  </article>
+                  <article class="info-tarjeta clima-tarjeta">
+                    <span class="info-icono">🌤️</span>
+                    <h3>Clima Estimado</h3>
+                    <div class="clima-info">
+                      <span class="clima-temp">${clima.temp}</span>
+                      <span class="clima-estado">${clima.estado}</span>
+                      <p class="clima-detalles">💧 Humedad: ${clima.humedad}<br>💨 Viento: ${clima.viento}</p>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            `;
+          })() : ''}
 
           <!-- Actividades Recomendadas -->
           ${this.destino.actividades && this.destino.actividades.length > 0 && typeof this.destino.actividades[0] === 'object' ? `
@@ -162,14 +192,6 @@ class DestinoDetalle extends HTMLElement {
           </footer>
         </div>
       </article>
-
-      <!-- Experiencia Mágica Toggle -->
-      <button class="btn-magico" id="btnMagico">
-        Experiencia Mágica ✨
-      </button>
-
-      <!-- Contenedor de Partículas -->
-      <div id="particlesContainer" class="particles-container"></div>
 
       <!-- Lightbox Modal -->
       <div class="lightbox" id="lightboxModal">
@@ -259,48 +281,6 @@ class DestinoDetalle extends HTMLElement {
         card.style.zIndex = "1";
       });
     });
-
-    // Magic Mode (Experiencia Mágica)
-    const btnMagico = shadow.getElementById("btnMagico");
-    const particlesContainer = shadow.getElementById("particlesContainer");
-    const article = shadow.querySelector(".detalle");
-    let isMagic = false;
-    let particleInterval;
-
-    if (btnMagico && particlesContainer) {
-      btnMagico.addEventListener("click", () => {
-        isMagic = !isMagic;
-        
-        if (isMagic) {
-          btnMagico.classList.add("active");
-          btnMagico.innerHTML = "Apagar Magia 🌙";
-          article.classList.add("magic-mode");
-          
-          // Generate particles
-          particleInterval = setInterval(() => {
-            const particle = document.createElement("div");
-            particle.classList.add("particle");
-            particle.style.left = Math.random() * 100 + "%";
-            particle.style.width = Math.random() * 6 + 2 + "px";
-            particle.style.height = particle.style.width;
-            particle.style.animationDuration = Math.random() * 3 + 2 + "s";
-            particle.style.opacity = Math.random();
-            particlesContainer.appendChild(particle);
-            
-            setTimeout(() => {
-              particle.remove();
-            }, 5000);
-          }, 150);
-
-        } else {
-          btnMagico.classList.remove("active");
-          btnMagico.innerHTML = "Experiencia Mágica ✨";
-          article.classList.remove("magic-mode");
-          clearInterval(particleInterval);
-          particlesContainer.innerHTML = "";
-        }
-      });
-    }
   }
 }
 

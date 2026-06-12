@@ -40,12 +40,13 @@ class MapaProvincia extends HTMLElement {
 
   render() {
     const imagen = this.obtenerImagenProvincia();
+    const homeUrl = new URL('../index.html', import.meta.url).href;
 
     if (!this.region || !imagen) {
       this.shadowRoot.innerHTML = `
         <h1>Error</h1>
         <p>No se encontró la provincia seleccionada.</p>
-        <a href="/">Volver</a>
+        <a href="${homeUrl}">Volver</a>
       `;
       return;
     }
@@ -56,7 +57,7 @@ class MapaProvincia extends HTMLElement {
         data-id="${destino.id}"
         style="top: ${destino.mapTop}%; left: ${destino.mapLeft}%"
         aria-label="${destino.nombre}">
-        <span>${destino.nombre}</span>
+        ${destino.nombre}
       </button>
     `).join("");
 
@@ -76,17 +77,27 @@ class MapaProvincia extends HTMLElement {
         </div>
 
         <div class="lista">
-          ${this.destinos.map(destino => `
-            <article class="destino" data-id="${destino.id}" tabindex="0" role="button" aria-label="Ver ${destino.nombre}">
-              <div class="destino-img">
-                <img src="../${destino.imagen_portada}" alt="${destino.nombre}" loading="lazy">
-              </div>
-              <div class="destino-body">
-                <h3>${destino.nombre}</h3>
-                <p>${destino.region}</p>
-              </div>
-            </article>
-          `).join("")}
+          ${this.destinos.map(destino => {
+            const actividadesHTML = destino.actividades && destino.actividades.length > 0
+              ? `<div class="destino-tags">
+                  ${destino.actividades.map(act => `<span class="destino-tag">${act.nombre || act}</span>`).slice(0, 3).join("")}
+                 </div>`
+              : '';
+            return `
+              <article class="destino" data-id="${destino.id}" tabindex="0" role="button" aria-label="Ver ${destino.nombre}">
+                <div class="destino-img">
+                  <img src="../${destino.imagen_portada}" alt="${destino.nombre}" loading="lazy">
+                </div>
+                <div class="destino-body">
+                  <h3>${destino.nombre}</h3>
+                  <div class="destino-meta">
+                    <span class="destino-region">📍 ${destino.region}</span>
+                  </div>
+                  ${actividadesHTML}
+                </div>
+              </article>
+            `;
+          }).join("")}
         </div>
       </section>
     `;
