@@ -207,12 +207,17 @@ img {
 @media (max-width: 600px) {
   .card {
     border-radius: var(--radius-md);
+    padding: 0.75rem;
   }
 
+  /* Bigger, easier-to-tap canton labels on mobile */
   .punto-turistico {
-    /* keep visible on mobile */
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+    min-height: 36px;
+    touch-action: manipulation;
   }
-  
+
   .lista {
     grid-template-columns: 1fr;
     margin-top: 2rem;
