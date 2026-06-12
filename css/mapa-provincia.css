@@ -210,7 +210,7 @@ img {
   }
 
   .punto-turistico {
-    display: none;
+    /* keep visible on mobile */
   }
   
   .lista {
