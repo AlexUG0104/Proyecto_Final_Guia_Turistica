@@ -1,124 +1,148 @@
 # 🌴 Guía Turística Multimedia de Costa Rica
+### 🇨🇷 Proyecto Final - Fase 3 (Entrega Final)
 
-## 📌 Descripción
-Aplicación web interactiva que permite explorar las provincias de Costa Rica y sus destinos turísticos mediante mapas dinámicos, imágenes y contenido multimedia.
-
-## Integrantes
-- Umaña Guevara Alexander C27912
-- Aguilar Alvarado Esteban C10098
-- Rojas Zuñiga Bryan Alonso C16913
-
+Aplicación web interactiva y responsiva desarrollada con **Web Components nativos (Shadow DOM)** que permite explorar las provincias de Costa Rica y sus riquezas turísticas mediante mapas interactivos, audioguías personalizadas, galerías dinámicas y videos inmersivos en alta definición.
 
 ---
 
-## 🗺️ Regiones incluidas
-- Guanacaste
-- Alajuela
-- Heredia
-- San José
-- Cartago
-- Limón
-- Puntarenas
+## 👥 Integrantes
+*   **Umaña Guevara Alexander** - C27912
+*   **Aguilar Alvarado Esteban** - C10098
+*   **Rojas Zuñiga Bryan Alonso** - C16913
 
 ---
 
-## 📍 Destinos
-Se implementan 2 destinos por provincia.
----
-## 🌐 Demo del proyecto
+## 🌐 Demo en Vivo
+Puedes interactuar con la aplicación desplegada en GitHub Pages a través del siguiente enlace:
 
-Podés ver la aplicación funcionando aquí:
-
-👉 https://alexug0104.github.io/Proyecto_Final_Guia_Turistica/
+👉 **[Ver Aplicación en Funcionamiento](https://alexug0104.github.io/Proyecto_Final_Guia_Turistica/)**
 
 ---
 
-## 🧩 Web Components
+## 📸 Capturas de Pantalla
 
-### `<mapa-costa-rica>`
-- Muestra el mapa interactivo
-- Usa Shadow DOM
-- Permite seleccionar provincia
+Aquí puedes ver el aspecto visual e interactivo de la interfaz:
 
-### `<mapa-provincia>`
-- Carga mapa de cantones
-- Lee datos desde JSON
-- Renderiza puntos turísticos
+### 1. Pantalla de Inicio (Mapa de Costa Rica)
+![Pantalla de Inicio](CapReadme/Principal.png)
 
-### `<destino-detalle>`
-- Muestra información del destino
-- Imagen, descripción y actividades
+### 2. Vista de Provincia (Mapa de Cantones y Destinos)
+![Vista de Provincia](CapReadme/GuancaProvincia.png)
+
+### 3. Ficha Detallada del Destino (Galería y Audioguía)
+![Vista Detalle del Destino](CapReadme/Destino.png)
 
 ---
 
-## 🎬 Storyboard
+## 🎯 Requisitos de la Fase 3 Completados al 100%
 
-1. El usuario ingresa a la página principal.
-2. Observa un mapa interactivo de Costa Rica.
-3. Selecciona una provincia dando clic sobre el mapa.
-4. La aplicación muestra el mapa de cantones de esa provincia.
-5. El usuario selecciona uno de los puntos turísticos disponibles.
-6. La aplicación muestra la vista de detalle del destino con imagen, descripción y actividades.
----
+### 1. Aplicación Totalmente Funcional e Interactiva
+*   **Navegación Fluida:** Transición entre la página principal (mapa de Costa Rica), la página de provincias (cantones con pins interactivos y listado de destinos) y la página de destino individual (ficha detallada) a través de parámetros de consulta URL dinámicos.
+*   **7 Provincias Implementadas:** Guanacaste, Alajuela, Heredia, San José, Cartago, Limón y Puntarenas.
+*   **14 Destinos Turísticos:** 2 destinos completos detallados por provincia en el archivo de base de datos JSON.
 
-## ⚙️ Tecnologías utilizadas
-1. HTML
-2. CSS
-3. JavaScript
-4. Web Components
-5. Shadow DOM
----
-## 🧭 Guion de navegación
+### 2. Integración Completa de Medios (Multimedia)
+*   **Audioguías Propias (`.mp3`):** Se diseñó un reproductor personalizado `<audio-guia>` que reemplaza los controles genéricos del navegador y reproduce audios históricos/turísticos específicos para los 14 destinos.
+*   **Videos Hero (`.mp4`):** Cada página de destino carga dinámicamente en el fondo un video a pantalla completa en bucle y silenciado, integrándose estéticamente con el fondo del sitio a través de difuminados gradientes.
+*   **Imágenes de Portada, Galería y Actividades:** Más de 70 imágenes distribuidas en portadas, galerías interactivas ampliables (con Lightbox incorporado) y tarjetas de actividades turísticas recomendadas.
+*   **Auditoría de Archivos:** Se validó mediante un script de consola que **todos** los recursos declarados en el JSON existen en el repositorio.
 
-Página principal  
-↓ clic en provincia  
-Página de provincia  
-↓ clic en punto turístico  
-Página de destino  
-↓ volver  
-Página de provincia / Página principal  
+### 3. Componentes Web Implementados (Shadow DOM)
+*   `<app-header>`: Barra de navegación con opciones de región rápida, botón de **Destino Sorpresa 🎲** (elige y viaja a un destino al azar) y botón de **Experiencia Mágica ✨** (Dark/Neon Mode con estrellas flotantes persistentes vía `localStorage`).
+*   `<mapa-costa-rica>`: Renderiza el mapa principal del país y gestiona la redirección interactiva.
+*   `<mapa-provincia>`: Carga el mapa de cantones, posiciona pins interactivos dinámicamente y lista los destinos. En dispositivos móviles incluye lógica especial de doble toque para evitar redirecciones accidentales.
+*   `<destino-detalle>`: Renderiza el contenido informativo, el pronóstico del clima local, la galería interactiva de fotos y activa el Lightbox.
+*   `<audio-guia>`: Reproductor multimedia personalizado con barra de volumen, barra de progreso interactiva, control de tiempo transcurrido y botón de silenciado.
+
+### 4. Características Estéticas Premium
+*   **Glassmorphism:** Uso intensivo de fondos translúcidos, bordes brillantes semi-transparentes y filtros de desenfoque (`backdrop-filter: blur()`).
+*   **Micro-animaciones:** Efecto de inclinación en tres dimensiones (3D Tilt effect) en las tarjetas informativas y de actividades según el movimiento del ratón.
+*   **Tipografías Elegantes:** DM Serif Display para títulos principales y Plus Jakarta Sans para el cuerpo del texto.
 
 ---
-## 🎥 Integración multimedia
 
-El proyecto incorpora contenido multimedia en la vista de cada destino turístico.
-
-Cada destino incluye:
-- Imagen principal
-- Descripción
-- Actividades
-- Video representativo del lugar
-
-Ejemplo implementado:
-- En el destino La Fortuna (Volcán Arenal) se muestra un video de fondo que mejora la experiencia visual del usuario.
-
-
-## 📦 Estructura JSON
-
-```json
-{
-  "id": "guanacaste-001",
-  "nombre": "Tamarindo",
-  "region": "Guanacaste",
-  "descripcion": "Playa turística...",
-  "imagen_portada": "assents/img/PuntoTamarindo.jpg",
-  "galeria": [],
-  "audio": "assents/audio/tamarindo.mp3",
-  "video": "assents/video/guanacaste/tamarindo/video.mp4",
-  "actividades": ["Surf", "Playa"],
-  "lat": 10.2993,
-  "lng": -85.8400,
-  "mapTop": 72,
-  "mapLeft": 30
-}
+## 📂 Estructura del Proyecto
+El repositorio está organizado de la siguiente manera:
+```
+Proyecto_Final_Guia_Turistica/
+│
+├── index.html                       # Página de Inicio (Mapa de Costa Rica)
+├── README.md                        # Documentación Principal del Proyecto
+│
+├── CapReadme/                       # Capturas de pantalla utilizadas en el README
+│   ├── Principal.png
+│   ├── GuancaProvincia.png
+│   └── Destino.png
+│
+├── assents/                         # Recursos multimedia y assets (imágenes, audios, videos)
+│   ├── audio/                       # 14 pistas de audioguías (.mp3)
+│   ├── img/                         # Mapas provinciales y fotos de destinos
+│   └── video/                       # 14 videos de fondo en bucle (.mp4)
+│
+├── components/                      # Lógica de Web Components
+│   ├── app-header.js
+│   ├── audio-guia.js
+│   ├── destino-detalle.js
+│   ├── mapa-costa-rica.js
+│   └── mapa-provincia.js
+│
+├── css/                             # Hojas de estilo encapsuladas y globales
+│   ├── app-header.css
+│   ├── audio-guia.css
+│   ├── destino-detalle.css
+│   ├── global.css
+│   ├── mapa-costa-rica.css
+│   └── mapa-provincia.css
+│
+├── data/                            # Base de datos local
+│   └── destinos.json                # Información estructurada de provincias y destinos
+│
+├── docs/                            # Documentación técnica adicional
+│   └── Manual_y_Arquitectura.md     # Manual de usuario y flujo de datos técnicos
+│
+├── provincia/
+│   └── index.html                   # Página intermedia (Mapa de Cantones)
+│
+└── destino/
+    └── index.html                   # Página de detalle (Ficha Multimedia)
 ```
 
 ---
 
-## 🚀 Avance Fase 2
+## 🚀 Instalación y Ejecución Local
 
-- **Custom Elements implementados:** Ya se definieron al menos 4 componentes (`<app-header>`, `<mapa-costa-rica>`, `<mapa-provincia>`, `<destino-detalle>`, `<audio-guia>`).
-- **Shadow DOM aplicado:** Todos los Web Components utilizan Shadow DOM para encapsular su estilo y estructura.
-- **JSON con más de 3 destinos:** El archivo `destinos.json` contiene la información de más de 10 destinos, todos con su estructura base completa.
-- **Audio integrado:** Se integró el componente `<audio-guia>` en la vista de detalle de cada destino, permitiendo la reproducción de audios.
-- **Video integrado:** Los videos siguen funcionales y representativos por destino en el fondo de la pantalla.
+Debido a que la aplicación realiza solicitudes HTTP locales (`fetch`) para leer el archivo `data/destinos.json` y los componentes web dinámicos, es necesario ejecutarla a través de un servidor local (para evitar restricciones de CORS del navegador).
+
+### Opción 1: Usando Python (Preinstalado en la mayoría de sistemas)
+Abre una consola o terminal en la carpeta raíz del proyecto y ejecuta:
+```bash
+python -m http.server 8000
+```
+Luego abre tu navegador e ingresa a: http://localhost:8000
+
+### Opción 2: Extensión de VS Code (Live Server)
+1. Abre el proyecto en Visual Studio Code.
+2. Si no la tienes, instala la extensión **Live Server** de Ritwick Dey.
+3. Haz clic derecho en el archivo `index.html` y selecciona **Open with Live Server**.
+
+### Opción 3: Usando Node.js / NPM (Si tienes Node)
+Si prefieres usar un servidor rápido de Node, puedes ejecutar:
+```bash
+npx http-server -p 8000
+```
+Y acceder a: http://localhost:8000
+
+O alternativamente con `serve`:
+```bash
+npx serve .
+```
+Y acceder a: http://localhost:3000
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+1.  **HTML5 Semántico:** Estructura limpia y accesible.
+2.  **CSS3 Avanzado:** Custom Properties (Variables), Flexbox, CSS Grid y animaciones de keyframes.
+3.  **JavaScript Moderno (ES6+):** Programación orientada a objetos para componentes web.
+4.  **Web Components:** Custom Elements y Shadow DOM para modularidad de código.
+5.  **GitHub Pages:** Alojamiento y despliegue del sitio estático.
