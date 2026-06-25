@@ -28,13 +28,18 @@ class AppHeader extends HTMLElement {
           <h2>Guía <span>CR</span></h2>
         </a>
         <nav>
-          <button data-region="Limón">Caribe</button>
-          <button data-region="Guanacaste">Guanacaste</button>
-          <button data-region="San José">Central</button>
-          <button data-region="Puntarenas">Sur</button>
-          <button id="btn-sorpresa" class="btn-sorpresa">
-            <span>¡Destino Sorpresa! 🎲</span>
-          </button>
+          <button id="nav-inicio" class="nav-tab active">Inicio</button>
+          <button id="nav-explorar" class="nav-tab">Explorador</button>
+          <div class="explorar-controls" id="explorar-controls">
+            <span class="nav-separator">|</span>
+            <button data-region="Limón">Caribe</button>
+            <button data-region="Guanacaste">Guanacaste</button>
+            <button data-region="San José">Central</button>
+            <button data-region="Puntarenas">Sur</button>
+            <button id="btn-sorpresa" class="btn-sorpresa">
+              <span>¡Destino Sorpresa! 🎲</span>
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -42,6 +47,7 @@ class AppHeader extends HTMLElement {
         Experiencia Mágica ✨
       </button>
     `;
+
   }
 
   initMagicMode() {
@@ -96,8 +102,25 @@ class AppHeader extends HTMLElement {
     }
   }
 
+  actualizarControlesVisibilidad(tab) {
+    const controls = this.shadowRoot.getElementById("explorar-controls");
+    if (!controls) return;
+    
+    const isSubpage = window.location.pathname.includes("/provincia/") || window.location.pathname.includes("/destino/");
+    
+    if (isSubpage) {
+      controls.classList.remove("oculto");
+    } else {
+      if (tab === "inicio") {
+        controls.classList.add("oculto");
+      } else {
+        controls.classList.remove("oculto");
+      }
+    }
+  }
+
   addEvents() {
-    const buttons = this.shadowRoot.querySelectorAll("nav button:not(#btn-sorpresa)");
+    const buttons = this.shadowRoot.querySelectorAll("nav button[data-region]");
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
         const region = btn.dataset.region;
@@ -105,6 +128,62 @@ class AppHeader extends HTMLElement {
         window.location.href = `${provinciaUrl}?region=${encodeURIComponent(region)}`;
       });
     });
+
+    const isSubpage = window.location.pathname.includes("/provincia/") || window.location.pathname.includes("/destino/");
+    const navInicio = this.shadowRoot.getElementById("nav-inicio");
+    const navExplorar = this.shadowRoot.getElementById("nav-explorar");
+
+    if (navInicio && navExplorar) {
+      navInicio.addEventListener("click", () => {
+        if (isSubpage) {
+          window.location.href = `../index.html?tab=inicio`;
+        } else {
+          window.dispatchEvent(new CustomEvent("tab-changed", { detail: { tab: 'inicio' } }));
+        }
+      });
+
+      navExplorar.addEventListener("click", () => {
+        if (isSubpage) {
+          window.location.href = `../index.html?tab=mapa`;
+        } else {
+          window.dispatchEvent(new CustomEvent("tab-changed", { detail: { tab: 'mapa' } }));
+        }
+      });
+    }
+
+    // Listen to tab changes globally to sync active class on header buttons
+    window.addEventListener("tab-changed", (event) => {
+      if (!navInicio || !navExplorar) return;
+      const activeTab = event.detail.tab;
+      if (activeTab === 'inicio') {
+        navInicio.classList.add("active");
+        navExplorar.classList.remove("active");
+      } else {
+        navInicio.classList.remove("active");
+        navExplorar.classList.add("active");
+      }
+      this.actualizarControlesVisibilidad(activeTab);
+    });
+
+    // Set initial active state
+    if (navInicio && navExplorar) {
+      if (isSubpage) {
+        navInicio.classList.remove("active");
+        navExplorar.classList.add("active");
+        this.actualizarControlesVisibilidad("mapa");
+      } else {
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialTab = urlParams.get("tab") || "inicio";
+        if (initialTab === "mapa") {
+          navInicio.classList.remove("active");
+          navExplorar.classList.add("active");
+        } else {
+          navInicio.classList.add("active");
+          navExplorar.classList.remove("active");
+        }
+        this.actualizarControlesVisibilidad(initialTab);
+      }
+    }
 
     const btnSorpresa = this.shadowRoot.getElementById("btn-sorpresa");
     if (btnSorpresa) {

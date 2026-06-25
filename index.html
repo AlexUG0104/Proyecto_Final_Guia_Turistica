@@ -14,16 +14,172 @@
   <app-header></app-header>
 
   <main class="app-container">
-    <section class="hero">
-      <span class="badge">Descubrí el Paraíso Tropical</span>
-      <h1>Explorá Costa Rica</h1>
-      <p>Hacé clic en el mapa interactivo y sumergite en la magia de cada provincia.</p>
-    </section>
 
-    <mapa-costa-rica></mapa-costa-rica>
+    <!-- SECCIÓN DE INICIO (Presentación de la Web) -->
+    <div id="sec-inicio" class="home-section active">
+      <!-- Sección de Cabecera (Hero) -->
+      <section class="hero">
+        <span class="badge">🇨🇷 Descubrí el Paraíso Tropical</span>
+        <h1>Explorá Costa Rica</h1>
+        <p>Surgida entre dos océanos, Costa Rica atesora paisajes únicos en el mundo. Hacé clic abajo para sumergirte en la magia interactiva de cada provincia y planificar tu próxima aventura.</p>
+        <button id="btn-comenzar" class="btn-comenzar">
+          ¡Comenzar a Explorar! 🗺️
+        </button>
+      </section>
+
+      <!-- Sección Sobre el Proyecto (Explora con Sentidos) -->
+      <section class="info-proyecto">
+        <div class="section-header">
+          <h2>Una Guía Turística Completa e Inmersiva</h2>
+          <p>Esta plataforma te invita a explorar y experimentar la biodiversidad del país mediante múltiples recursos digitales.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Mapas de Cantones</h3>
+            <p>Navegá a través de la división territorial de cada provincia con marcadores y pines dinámicos ubicados con precisión geográfica.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎧</div>
+            <h3>Audioguías Personalizadas</h3>
+            <p>Conocé la historia, leyendas y datos curiosos de cada destino turístico utilizando nuestro reproductor integrado a medida.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎥</div>
+            <h3>Vídeos Hero de Fondo</h3>
+            <p>Visualizá la belleza del entorno costarricense gracias a videos interactivos en alta definición en la cabecera de cada destino.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Experiencia Mágica</h3>
+            <p>Activá el modo interactivo especial en la cabecera para experimentar la interfaz con un diseño nocturno y lluvia de estrellas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Costa Rica en Cifras -->
+      <section class="stats-section">
+        <div class="stats-bg-gradient"></div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">5%</span>
+            <span class="stat-label">Biodiversidad Mundial 🐒</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">7</span>
+            <span class="stat-label">Provincias Únicas 🌴</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">28</span>
+            <span class="stat-label">Parques Nacionales 🌋</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Océanos (Caribe y Pacífico) 🌊</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Citas -->
+      <section class="quote-section">
+        <div class="quote-card">
+          <span class="quote-mark">“</span>
+          <blockquote>
+            Costa Rica no es solo un destino turístico, es un recordatorio de lo viva y hermosa que es la naturaleza cuando decidimos protegerla. ¡Viví la experiencia Pura Vida!
+          </blockquote>
+          <cite>— Guía Multimedia de Costa Rica</cite>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECCIÓN DEL EXPLORADOR (Mapa de Costa Rica) -->
+    <div id="sec-mapa" class="home-section">
+      <section class="mapa-section">
+        <div class="section-header">
+          <h2>Mapa Interactivo de Provincias</h2>
+          <p>Hacé clic en cualquier provincia sobre el mapa para descubrir sus cantones y principales atracciones turísticas.</p>
+        </div>
+        <mapa-costa-rica></mapa-costa-rica>
+      </section>
+    </div>
+
   </main>
+
+  <!-- Pie de Página Global -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>Guía <span>CR</span></h2>
+        <p>Un viaje interactivo digital por la joya natural de Centroamérica. Creado con Web Components nativos y Shadow DOM.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Desarrollado por:</h3>
+        <ul>
+          <li>Alexander Umaña Guevara (C27912)</li>
+          <li>Esteban Aguilar Alvarado (C10098)</li>
+          <li>Bryan Alonso Rojas Zuñiga (C16913)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Guía Turística de Costa Rica. Proyecto Final de Desarrollo Web Multimedia.</p>
+    </div>
+  </footer>
 
   <script type="module" src="components/app-header.js"></script>
   <script type="module" src="components/mapa-costa-rica.js"></script>
+
+  <script>
+    // Lógica para alternar las secciones (Inicio / Mapa)
+    const secInicio = document.getElementById("sec-inicio");
+    const secMapa = document.getElementById("sec-mapa");
+
+    function cambiarTab(tab) {
+      if (tab === "mapa") {
+        secInicio.classList.remove("active");
+        secMapa.classList.add("active");
+        
+        // Actualizar URL sin recargar la página
+        const url = new URL(window.location);
+        url.searchParams.set("tab", "mapa");
+        window.history.pushState({}, "", url);
+      } else {
+        secInicio.classList.add("active");
+        secMapa.classList.remove("active");
+        
+        const url = new URL(window.location);
+        url.searchParams.set("tab", "inicio");
+        window.history.pushState({}, "", url);
+      }
+      
+      // Notificar al app-header para sincronizar la clase activa del botón
+      window.dispatchEvent(new CustomEvent("tab-changed", { detail: { tab: tab } }));
+    }
+
+    // Escuchar el evento de cambio de pestaña emitido por la barra de navegación
+    window.addEventListener("tab-changed", (event) => {
+      const activeTab = event.detail.tab;
+      if (activeTab === 'inicio') {
+        secInicio.classList.add("active");
+        secMapa.classList.remove("active");
+      } else {
+        secInicio.classList.remove("active");
+        secMapa.classList.add("active");
+      }
+    });
+
+    // Vincular el botón Call-to-Action del Hero
+    const btnComenzar = document.getElementById("btn-comenzar");
+    if (btnComenzar) {
+      btnComenzar.addEventListener("click", () => {
+        cambiarTab("mapa");
+      });
+    }
+
+    // Verificar parámetros al cargar la página
+    const params = new URLSearchParams(window.location.search);
+    const initialTab = params.get("tab") || "inicio";
+    cambiarTab(initialTab);
+  </script>
 </body>
 </html>

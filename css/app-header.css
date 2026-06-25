@@ -226,3 +226,41 @@ nav button:hover::after {
     font-size: 0.85rem;
   }
 }
+
+/* Nav tabs and separator styling */
+.nav-tab.active {
+  color: var(--primary) !important;
+  background: var(--primary-light) !important;
+}
+
+.nav-tab.active::after {
+  width: 70% !important;
+  background: var(--primary) !important;
+}
+
+.nav-separator {
+  color: var(--text-muted);
+  opacity: 0.4;
+  font-weight: 300;
+  pointer-events: none;
+  margin: 0 0.25rem;
+}
+
+/* Explorar controls container styling */
+.explorar-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.explorar-controls.oculto {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .explorar-controls {
+    display: contents;
+  }
+}
+
