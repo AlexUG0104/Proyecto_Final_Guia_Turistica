@@ -23,12 +23,21 @@
       z-index: 0;
       /* Detrás del contenido pero sobre el fondo del body */
       overflow: hidden;
+      background-color: #0c1812; /* Fondo esmeralda oscuro para evitar destellos y dar cohesión */
     }
 
     .hero-bg-video video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      /* Aceleración por GPU de hardware para un renderizado ultra suave */
+      transform: translate3d(0, 0, 0) scale(1.02); 
+      backface-visibility: hidden;
+      perspective: 1000px;
+      /* Filtros visuales para aumentar el contraste dinámico, saturación y nitidez aparente */
+      filter: contrast(1.12) brightness(0.92) saturate(1.08);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     .hero-overlay {
