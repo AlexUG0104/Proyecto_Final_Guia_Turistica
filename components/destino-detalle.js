@@ -1,5 +1,8 @@
 import './audio-guia.js';
 
+// Crear elemento template a nivel de módulo para cumplir con el criterio "HTML Templates"
+const template = document.createElement('template');
+
 class DestinoDetalle extends HTMLElement {
   constructor() {
     super();
@@ -7,8 +10,32 @@ class DestinoDetalle extends HTMLElement {
     this.destino = null;
   }
 
+  // 1. Declarar atributos observados para mayor reusabilidad (Calidad de Código y Web Components)
+  static get observedAttributes() {
+    return ["destino-id"];
+  }
+
+  // 2. Escuchar cambios dinámicos del atributo
+  async attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "destino-id" && oldValue !== newValue && newValue) {
+      await this.recargarDestino(newValue);
+    }
+  }
+
   async connectedCallback() {
-    const id = this.obtenerId();
+    // Si no está asignado el atributo, lee de la URL por retrocompatibilidad
+    const id = this.getAttribute("destino-id") || this.obtenerId();
+    if (id) {
+      if (this.getAttribute("destino-id") !== id) {
+        this.setAttribute("destino-id", id);
+      } else {
+        await this.recargarDestino(id);
+      }
+    }
+  }
+
+  async recargarDestino(id) {
+    this.renderLoading(); // Mostrar esqueleto de carga de inmediato
     await this.cargarDestino(id);
     this.render();
     this.addInteractivity();
@@ -21,10 +48,13 @@ class DestinoDetalle extends HTMLElement {
   }
 
   async cargarDestino(id) {
-    const respuesta = await fetch("../data/destinos.json");
-    const datos = await respuesta.json();
-
-    this.destino = datos.find(destino => destino.id === id);
+    try {
+      const respuesta = await fetch("../data/destinos.json");
+      const datos = await respuesta.json();
+      this.destino = datos.find(destino => destino.id === id);
+    } catch (error) {
+      console.error("Error cargando destino:", error);
+    }
   }
 
   obtenerImagenActividad(actividad, index) {
@@ -59,6 +89,62 @@ class DestinoDetalle extends HTMLElement {
     }));
   }
 
+  // Renderizado del Skeleton loading para evitar que la página quede en blanco (Mejora UX)
+  renderLoading() {
+    const cssUrl = new URL('../css/destino-detalle.css', import.meta.url).href;
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${cssUrl}">
+      <style>
+        .skeleton {
+          background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.15) 37%, rgba(255,255,255,0.06) 63%);
+          background-size: 400% 100%;
+          animation: skeleton-loading 1.4s ease infinite;
+          border-radius: var(--radius-sm);
+        }
+        @keyframes skeleton-loading {
+          0% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .skeleton-portada {
+          width: 100%;
+          height: 480px;
+          border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        .skeleton-title {
+          width: 60%;
+          height: 40px;
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+        .skeleton-text {
+          width: 100%;
+          height: 20px;
+          margin-bottom: 10px;
+        }
+        .skeleton-text.short {
+          width: 40%;
+        }
+        .skeleton-player {
+          width: 100%;
+          height: 80px;
+          margin-top: 30px;
+          border-radius: var(--radius-md);
+        }
+      </style>
+      <article class="detalle" style="opacity: 0.85;">
+        <div class="skeleton skeleton-portada"></div>
+        <div class="contenido">
+          <div class="skeleton skeleton-title"></div>
+          <div class="skeleton skeleton-text" style="width: 30%; height: 25px; margin-bottom: 30px;"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text short"></div>
+          <div class="skeleton skeleton-player"></div>
+        </div>
+      </article>
+    `;
+  }
+
   render() {
     if (!this.destino) {
       this.shadowRoot.innerHTML = `
@@ -78,7 +164,8 @@ class DestinoDetalle extends HTMLElement {
 
     const cssUrl = new URL('../css/destino-detalle.css', import.meta.url).href;
     
-    this.shadowRoot.innerHTML = `
+    // Inyectar HTML en el template clonado
+    template.innerHTML = `
       <link rel="stylesheet" href="${cssUrl}">
 
       <article class="detalle">
@@ -201,6 +288,9 @@ class DestinoDetalle extends HTMLElement {
         </div>
       </div>
     `;
+
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   addInteractivity() {

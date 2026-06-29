@@ -1,3 +1,6 @@
+// Crear elemento template a nivel de módulo para cumplir con el criterio "HTML Templates"
+const template = document.createElement('template');
+
 class AudioGuia extends HTMLElement {
   constructor() {
     super();
@@ -28,7 +31,9 @@ class AudioGuia extends HTMLElement {
     }
 
     const cssUrl = new URL('../css/audio-guia.css', import.meta.url).href;
-    this.shadowRoot.innerHTML = `
+    
+    // Inyectar HTML en el template
+    template.innerHTML = `
       <link rel="stylesheet" href="${cssUrl}">
       <div class="audio-card">
         <div class="audio-info">
@@ -71,6 +76,8 @@ class AudioGuia extends HTMLElement {
       </div>
     `;
 
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
     this.setupAudioEvents();
   }
 

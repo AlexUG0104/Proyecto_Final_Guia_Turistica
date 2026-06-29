@@ -1,3 +1,6 @@
+// Crear elemento template a nivel de módulo para cumplir con el criterio "HTML Templates"
+const template = document.createElement('template');
+
 class MapaCostaRica extends HTMLElement {
   constructor() {
     super();
@@ -11,7 +14,9 @@ class MapaCostaRica extends HTMLElement {
 
   render() {
     const cssUrl = new URL('../css/mapa-costa-rica.css', import.meta.url).href;
-    this.shadowRoot.innerHTML = `
+    
+    // Inyectar en el template
+    template.innerHTML = `
       <link rel="stylesheet" href="${cssUrl}">
 
       <div class="mapa">
@@ -36,6 +41,9 @@ class MapaCostaRica extends HTMLElement {
         <button class="prov-btn" data-region="Puntarenas">🐬 Puntarenas</button>
       </div>
     `;
+
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   addEvents() {

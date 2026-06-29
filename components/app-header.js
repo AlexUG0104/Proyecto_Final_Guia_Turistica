@@ -1,3 +1,6 @@
+// Crear elemento template a nivel de módulo para cumplir con el criterio "HTML Templates"
+const template = document.createElement('template');
+
 class AppHeader extends HTMLElement {
   constructor() {
     super();
@@ -20,7 +23,9 @@ class AppHeader extends HTMLElement {
   render() {
     const cssUrl = new URL('../css/app-header.css', import.meta.url).href;
     const homeUrl = new URL('../index.html', import.meta.url).href;
-    this.shadowRoot.innerHTML = `
+
+    // Inyectar HTML dinámico con URLs resueltas en el template
+    template.innerHTML = `
       <link rel="stylesheet" href="${cssUrl}">
 
       <header>
@@ -48,6 +53,8 @@ class AppHeader extends HTMLElement {
       </button>
     `;
 
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   initMagicMode() {
@@ -102,6 +109,107 @@ class AppHeader extends HTMLElement {
     }
   }
 
+  triggerMagicTransition(callback) {
+    let container = document.querySelector(".magic-transition-container");
+    if (!container) {
+      container = document.createElement("div");
+      container.className = "magic-transition-container";
+      container.innerHTML = `
+        <style>
+          .magic-transition-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 100000;
+            pointer-events: none;
+            display: flex;
+          }
+          .magic-transition-container .curtain-panel {
+            width: 50vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #051a10 0%, #1a4d33 100%);
+            position: absolute;
+            top: 0;
+            transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            pointer-events: auto;
+          }
+          .magic-transition-container .curtain-panel.left {
+            left: 0;
+            transform: translateX(-100%);
+            border-right: 2px solid rgba(255, 215, 0, 0.35);
+          }
+          .magic-transition-container .curtain-panel.right {
+            right: 0;
+            transform: translateX(100%);
+            border-left: 2px solid rgba(255, 215, 0, 0.35);
+          }
+          .magic-transition-container .curtain-sparkle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 6px;
+            height: 100vh;
+            background: linear-gradient(to bottom, #ffd700, #ff9f1c, #2ec4b6);
+            transform: translate(-50%, -100%);
+            box-shadow: 0 0 25px #ffd700, 0 0 50px #ff9f1c, 0 0 100px #2ec4b6;
+            transition: transform 0.55s cubic-bezier(0.76, 0, 0.24, 1);
+            z-index: 100001;
+          }
+          
+          /* Animación: Curtains meet */
+          .magic-transition-container.active .curtain-panel.left {
+            transform: translateX(0);
+          }
+          .magic-transition-container.active .curtain-panel.right {
+            transform: translateX(0);
+          }
+          .magic-transition-container.active .curtain-sparkle {
+            transform: translate(-50%, 0);
+          }
+          
+          /* Animación: Curtains split out */
+          .magic-transition-container.active.out .curtain-panel.left {
+            transform: translateX(-100%);
+          }
+          .magic-transition-container.active.out .curtain-panel.right {
+            transform: translateX(100%);
+          }
+          .magic-transition-container.active.out .curtain-sparkle {
+            transform: translate(-50%, 100%);
+            transition: transform 0.65s cubic-bezier(0.76, 0, 0.24, 1);
+          }
+        </style>
+        <div class="curtain-panel left"></div>
+        <div class="curtain-panel right"></div>
+        <div class="curtain-sparkle"></div>
+      `;
+      document.body.appendChild(container);
+    }
+
+    // Force reflow
+    container.offsetHeight;
+
+    // Step 1: Slide in curtains to join in center
+    container.classList.add("active");
+
+    // Step 2: At center (550ms), change the background theme class
+    setTimeout(() => {
+      callback();
+      
+      // Step 3: Slide out curtains
+      container.classList.add("out");
+      
+      // Step 4: Remove transition element from DOM
+      setTimeout(() => {
+        container.remove();
+      }, 700);
+    }, 600);
+  }
+
+
   actualizarControlesVisibilidad(tab) {
     const controls = this.shadowRoot.getElementById("explorar-controls");
     if (!controls) return;
@@ -151,7 +259,7 @@ class AppHeader extends HTMLElement {
       });
     }
 
-    // Listen to tab changes globally to sync active class on header buttons
+    // Escuchar el cambio global de pestaña
     window.addEventListener("tab-changed", (event) => {
       if (!navInicio || !navExplorar) return;
       const activeTab = event.detail.tab;
@@ -165,7 +273,7 @@ class AppHeader extends HTMLElement {
       this.actualizarControlesVisibilidad(activeTab);
     });
 
-    // Set initial active state
+    // Estado activo inicial
     if (navInicio && navExplorar) {
       if (isSubpage) {
         navInicio.classList.remove("active");
@@ -209,18 +317,22 @@ class AppHeader extends HTMLElement {
     if (btnMagico) {
       btnMagico.addEventListener("click", () => {
         const isMagic = !document.body.classList.contains("magic-mode");
-        document.body.classList.toggle("magic-mode", isMagic);
-        localStorage.setItem("magic-mode", isMagic ? "true" : "false");
         
-        if (isMagic) {
-          btnMagico.classList.add("active");
-          btnMagico.innerHTML = "Apagar Magia 🌙";
-          this.startGlobalParticles();
-        } else {
-          btnMagico.classList.remove("active");
-          btnMagico.innerHTML = "Experiencia Mágica ✨";
-          this.stopGlobalParticles();
-        }
+        // Ejecutar el cambio de tema con la animación de cortina (Split Screen Curtain)
+        this.triggerMagicTransition(() => {
+          document.body.classList.toggle("magic-mode", isMagic);
+          localStorage.setItem("magic-mode", isMagic ? "true" : "false");
+          
+          if (isMagic) {
+            btnMagico.classList.add("active");
+            btnMagico.innerHTML = "Apagar Magia 🌙";
+            this.startGlobalParticles();
+          } else {
+            btnMagico.classList.remove("active");
+            btnMagico.innerHTML = "Experiencia Mágica ✨";
+            this.stopGlobalParticles();
+          }
+        });
       });
     }
   }

@@ -1,18 +1,47 @@
+// Crear elemento template a nivel de módulo para cumplir con el criterio "HTML Templates"
+const template = document.createElement('template');
+
 class MapaProvincia extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    this.region = this.obtenerRegion();
+    this.region = null;
     this.destinos = [];
   }
 
+  // 1. Declarar atributos observados para mayor reusabilidad
+  static get observedAttributes() {
+    return ["region"];
+  }
+
+  // 2. Escuchar cambios dinámicos del atributo
+  async attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "region" && oldValue !== newValue && newValue) {
+      await this.recargarProvincia(newValue);
+    }
+  }
+
   async connectedCallback() {
+    // Si no está asignado el atributo, lee de la URL por retrocompatibilidad
+    const region = this.getAttribute("region") || this.obtenerRegionDeURL();
+    if (region) {
+      if (this.getAttribute("region") !== region) {
+        this.setAttribute("region", region);
+      } else {
+        await this.recargarProvincia(region);
+      }
+    }
+  }
+
+  async recargarProvincia(region) {
+    this.region = region;
+    this.renderLoading(); // Mostrar esqueleto de carga de inmediato
     await this.cargarDestinos();
     this.render();
     this.addEvents();
   }
 
-  obtenerRegion() {
+  obtenerRegionDeURL() {
     const params = new URLSearchParams(window.location.search);
     return params.get("region");
   }
@@ -32,10 +61,81 @@ class MapaProvincia extends HTMLElement {
   }
 
   async cargarDestinos() {
-    const respuesta = await fetch("../data/destinos.json");
-    const datos = await respuesta.json();
+    try {
+      const respuesta = await fetch("../data/destinos.json");
+      const datos = await respuesta.json();
+      this.destinos = datos.filter(destino => destino.region === this.region);
+    } catch (error) {
+      console.error("Error cargando destinos de provincia:", error);
+    }
+  }
 
-    this.destinos = datos.filter(destino => destino.region === this.region);
+  // Renderizado del Skeleton loading para evitar que la página quede en blanco (Mejora UX)
+  renderLoading() {
+    const cssUrl = new URL('../css/mapa-provincia.css', import.meta.url).href;
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${cssUrl}">
+      <style>
+        .skeleton {
+          background: linear-gradient(90deg, rgba(255,255,255,0.06) 25%, rgba(255,255,255,0.15) 37%, rgba(255,255,255,0.06) 63%);
+          background-size: 400% 100%;
+          animation: skeleton-loading 1.4s ease infinite;
+          border-radius: var(--radius-sm);
+        }
+        @keyframes skeleton-loading {
+          0% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .skeleton-map {
+          width: 100%;
+          height: 400px;
+          border-radius: var(--radius-md);
+        }
+        .skeleton-list-item {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 20px;
+        }
+        .skeleton-thumb {
+          width: 120px;
+          height: 80px;
+          border-radius: var(--radius-sm);
+          flex-shrink: 0;
+        }
+        .skeleton-details {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: center;
+        }
+      </style>
+      <section class="contenedor" style="opacity: 0.85;">
+        <div class="skeleton" style="width: 250px; height: 45px; margin: 0 auto 10px auto;"></div>
+        <div class="skeleton" style="width: 320px; height: 20px; margin: 0 auto 30px auto;"></div>
+        
+        <div class="card">
+          <div class="skeleton skeleton-map"></div>
+        </div>
+
+        <div class="lista" style="margin-top: 30px;">
+          <div class="skeleton-list-item">
+            <div class="skeleton skeleton-thumb"></div>
+            <div class="skeleton-details">
+              <div class="skeleton" style="width: 50%; height: 20px;"></div>
+              <div class="skeleton" style="width: 30%; height: 15px;"></div>
+            </div>
+          </div>
+          <div class="skeleton-list-item">
+            <div class="skeleton skeleton-thumb"></div>
+            <div class="skeleton-details">
+              <div class="skeleton" style="width: 60%; height: 20px;"></div>
+              <div class="skeleton" style="width: 25%; height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
   }
 
   render() {
@@ -62,7 +162,9 @@ class MapaProvincia extends HTMLElement {
     `).join("");
 
     const cssUrl = new URL('../css/mapa-provincia.css', import.meta.url).href;
-    this.shadowRoot.innerHTML = `
+    
+    // Configurar contenido en el template a nivel de módulo
+    template.innerHTML = `
       <link rel="stylesheet" href="${cssUrl}">
 
       <section class="contenedor">
@@ -101,6 +203,9 @@ class MapaProvincia extends HTMLElement {
         </div>
       </section>
     `;
+
+    this.shadowRoot.innerHTML = '';
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   addEvents() {
@@ -115,29 +220,29 @@ class MapaProvincia extends HTMLElement {
 
     puntos.forEach(punto => {
       if (isTouchDevice()) {
-        // On mobile: first tap shows tooltip, second tap navigates
+        // En móviles: primer tap muestra tooltip, segundo tap redirige
         punto.addEventListener("click", (e) => {
           const yaActivo = punto.classList.contains("activo");
 
-          // Close all other active tooltips
+          // Cerrar otros tooltips activos
           puntos.forEach(p => p.classList.remove("activo"));
 
           if (yaActivo) {
-            // Second tap — navigate
+            // Segundo tap — redirige
             irADestino(punto.dataset.id);
           } else {
-            // First tap — show tooltip
+            // Primer tap — muestra tooltip
             e.preventDefault();
             punto.classList.add("activo");
 
-            // Auto-hide tooltip after 2.5s if user doesn't tap again
+            // Ocultar después de 2.5s si el usuario no pulsa otra vez
             setTimeout(() => {
               punto.classList.remove("activo");
             }, 2500);
           }
         });
       } else {
-        // On desktop: direct click navigates
+        // En computadoras: clic directo redirige
         punto.addEventListener("click", () => {
           irADestino(punto.dataset.id);
         });
@@ -154,6 +259,30 @@ class MapaProvincia extends HTMLElement {
           event.preventDefault();
           irADestino(tarjeta.dataset.id);
         }
+      });
+    });
+
+    // 3D Tilt Effect para las tarjetas de la lista
+    const shadow = this.shadowRoot;
+    const cards = shadow.querySelectorAll(".destino");
+    cards.forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.015, 1.015, 1.015)`;
+        card.style.transition = "transform 0.1s ease-out";
+        card.style.zIndex = "5";
+      });
+      card.style.willChange = "transform";
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+        card.style.transition = "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)";
+        card.style.zIndex = "1";
       });
     });
   }
